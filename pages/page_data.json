@@ -2,7 +2,7 @@
 {
     "locales": {
         "en": {
-            "h1_1": "I am Eles. Create. Build."
+            "h1_1": "I am <span>Eles</span>.<br/>Create.<br/>Build."
         },
         "ru": {}
     } 

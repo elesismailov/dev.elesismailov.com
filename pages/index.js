@@ -20,9 +20,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main lang={ locale }>
+
         <section className="intro">
-          <h1>{ d.h1_1 }</h1>
+          <div className="wrapper">
+            <h1 dangerouslySetInnerHTML={{ __html: d.h1_1 }}></h1>
+          </div>
+          <hr />
         </section>
+
       </main>
     </>
     )
