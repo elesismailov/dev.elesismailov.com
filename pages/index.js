@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head'
 
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 import page_data from "./page_data.json";
 
@@ -21,9 +22,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main lang={ locale }>
 
-        <Header />
+      
+      <Header />
+
+      <main lang={ locale }>
 
         <section className="intro">
           <div className="wrapper">
@@ -107,6 +110,9 @@ export default function Home() {
         </section>
 
       </main>
+
+
+      <Footer d={d}/>
     </>
     )
   } else {
