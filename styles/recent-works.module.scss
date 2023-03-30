@@ -45,6 +45,7 @@ section.recent-works {
                 }
                 p {
                     font-size: 1.5rem;
+                    font-weight: 200;
                     max-width: 380px;
                     margin: 0 auto;
                     margin-top: 40px;
@@ -91,9 +92,20 @@ section.recent-works {
         }
     }
     @media only screen and (max-width: 450px) {
+        h2 {
+            font-size: 3rem;
+        }
         .section-wrapper {
 
             padding: 0 25px;
+
+            .project {
+                .text-block {
+                    h3 {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
         }
     }
 }

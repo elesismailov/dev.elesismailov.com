@@ -1,0 +1,83 @@
+
+section.hire-me {
+
+    margin-bottom: 90px;
+    hr {
+
+        width: 400px;
+        margin: auto;
+        margin-top: 200px;
+        border: none;
+        height: 2px;
+        background-color: var(--red);
+
+    }
+
+    
+    .wrapper {
+        text-align: center;
+        font-weight: 200;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-top: 90px;
+        }
+        p {
+            margin: auto;
+            margin-top: 30px;
+            max-width: 450px;
+            font-size: 20px;
+        }
+
+        .contacts {
+            margin-top: 55px;
+            
+            nav ul li {
+                display: flex;
+                justify-content: center;
+
+                a {
+                    color: var(--white);
+                    font-size: 24px;
+                    transition: color .1s ease;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+
+                    .icon {
+                        height: 27px;
+                    }
+                    
+                    &:hover {
+                        color: var(--red);
+                    }
+                }
+            }
+            .numbers {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .emails {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    }
+
+
+    @media only screen and (max-width: 768px) {
+        .wrapper {
+
+        }
+        hr {
+            width: 33%;
+        }
+    }
+}
