@@ -15,10 +15,11 @@ export default function Header() {
    
             <div className="wrapper">
                 <button className="close" onClick={ handleClose }>
-                    <svg width="37" height="38" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 3L34.5 34.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
-                        <path d="M3 35L34.5 3.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
-                    </svg>
+                <svg width="32" height="33" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3L34.5 34.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M3 35L34.5 3.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+
                 </button>
                 <nav>
                     <ul>
@@ -37,12 +38,16 @@ export default function Header() {
 
 function handleOpen(event) {
     const mainHeader = document.body.querySelector('#main-header')
+    const overflowWrapper = document.body.querySelector('#overflow-wrapper')
     mainHeader.classList.add('opened')
-    document.body.style.left = '300px';
+    // overflowWrapper.style.left = '300px';
+    document.body.style.overflow = 'hidden';
 }
 function handleClose(event) {
     const mainHeader = document.body.querySelector('#main-header')
+    const overflowWrapper = document.body.querySelector('#overflow-wrapper')
     mainHeader.classList.remove('opened')
-    document.body.style.left = '0';
+    // overflowWrapper.style.left = '0';
+    document.body.style.overflow = 'unset';
     event.target.onClick = handleOpen;
 }

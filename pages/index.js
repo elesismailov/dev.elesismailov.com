@@ -32,6 +32,43 @@ export default function Home() {
           <hr />
         </section>
 
+        <section className="recent-works">
+          <h2>{ d.recent_works_h2 }</h2>
+          <div className="section-wrapper">
+            
+            <div className="project project-1">
+              <div className="preview">
+                <img src="/preview-1.gif" alt="b40.kg website screenshot" />
+              </div>
+              <a href={d.recent_works_a_1} className="text-block">
+                <h3>{ d.recent_works_h3_1 }</h3>
+                <p>{ d.recent_works_p_1 }</p>
+              </a> 
+            </div>
+
+            <div className="project project-2">
+              <a href={d.recent_works_a_2} className="text-block">
+                <h3>{ d.recent_works_h3_2 }</h3>
+                <p>{ d.recent_works_p_2 }</p>
+              </a> 
+              <div className="preview">
+                <img src="/preview-2.gif" alt="Scriptonite website screenshot" />
+              </div>
+            </div>
+
+            {/* <div className="project">
+              <div className="preview">
+                <img src="/preview-2.png" alt="Scriptonite website screenshot" />
+              </div>
+              <div className="text-block">
+                <h3>{ d.recent_works_h3_2 }</h3>
+                <p>{ d.recent_works_p_2 }</p>
+              </div> 
+            </div> */}
+
+          </div>
+        </section>
+
       </main>
     </>
     )

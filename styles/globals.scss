@@ -1,5 +1,6 @@
 @import './intro.module.scss';
 @import './header.module.scss';
+@import './recent-works.module.scss';
 
 :root {
   --max-width: 1560px;
@@ -33,8 +34,18 @@ body {
 }
 
 html {
-  overflow-x: hidden;
+}
 
+#overflow-wrapper {
+  max-width: 100vw;
+  position: relative;
+  left: 0;
+  top: 0;
+  
+}
+
+img, svg, video {
+  max-width: 100%;
 }
 
 a {

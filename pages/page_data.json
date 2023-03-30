@@ -2,7 +2,14 @@
 {
     "locales": {
         "en": {
-            "h1_1": "I am <span>Eles</span>.<br/>Create.<br/>Build."
+            "h1_1": "I am <span>Eles</span>.<br/>Create.<br/>Build.",
+            "recent_works_h2": "Recent Works",
+            "recent_works_h3_1": "b40.kg",
+            "recent_works_a_1": "#",
+            "recent_works_p_1": "Multinational German-Kyrgyzstan Arbitrage Company.",
+            "recent_works_h3_2": "Scriptonite Fan Made Page",
+            "recent_works_a_2": "#",
+            "recent_works_p_2": "This is a fan made page. He wanted to turn the design into a real website."
         },
         "ru": {}
     } 

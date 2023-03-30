@@ -15,7 +15,7 @@ header.main {
     }
 
     .float {
-        position: absolute;
+        position: fixed;
         width: 70px;
 
         left: 0;                 
@@ -37,8 +37,8 @@ header.main {
 
     .wrapper {
         // display: none;
-        position: absolute;
-        background-color: var(--background-grey);
+        position: fixed;
+        background-color: var(--white);
         
         width: 300px;
         height: 100vh;
@@ -74,8 +74,8 @@ header.main {
             flex-direction: column;
             gap: 25px;
             li > a {
-                font-size: 20px;
-                color: var(--white);
+                font-size: 21px;
+                color: var(--background-1);
                 letter-spacing: 1.5px;
                 transition: color .1s ease;
 
@@ -88,7 +88,7 @@ header.main {
 
     &.opened {
         .float {
-            left: -0;
+            left: 300px;
             button {
                 color: var(--red);
             }
@@ -98,7 +98,7 @@ header.main {
             opacity: .6;
         }
         .wrapper {
-            left: -300px;
+            left: -0;
         }
     }
 }
