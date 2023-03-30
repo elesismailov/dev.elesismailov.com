@@ -104,7 +104,7 @@ header.main {
 
     @media only screen and (max-width: 450px) {
         .float {
-g
+
             background: var(--background-1);
             top: 0;
             left: 0;
@@ -115,6 +115,56 @@ g
             button {
                 transform: none;
                 margin-right: -16px; 
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+
+        .float {
+            
+            background: var(--background-1);
+            top: 0;
+            left: 0;
+            height: 100px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            button {
+                transform: none;
+                margin-right: -16px; 
+            }
+        }
+        
+        .wrapper {
+            
+            width: 500px;
+            height: unset;
+            left: calc(50% - 250px);
+            top: -100%;
+            right: 0;
+
+            padding: 50px 50px 100px;
+            transition: top .2s ease;
+
+            .close {
+
+            }
+            nav > ul {
+                align-items: center;
+            }
+        }
+        &.opened {
+            .float {
+                left: 0;
+            }
+            .cover {
+                display: block;
+                opacity: .6;
+            }
+            .wrapper {
+                left: calc(50% - 250px);
+                top: 0;
             }
         }
     }
