@@ -42,7 +42,7 @@ export default function Home() {
             <ul className="projects">
               {d.projects.map((p, i) => {
                 return (
-                  <li key={i + p.h} className={"project project-" + (i+1)}>
+                  <li key={p.h + i} className={"project project-" + (i+1)}>
 
                     {!p.isInverted &&
                       <div className="preview">

@@ -23,7 +23,7 @@ export default function Header({ d }) {
                 </button>
                 <nav>
                     <ul>
-                        { d.header_links.map((link, i) => <li key={i + link.text} ><a href={ link.href }>{ link.text }</a></li>) }
+                        { d.header_links.map((link, i) => <li key={link.text + i} ><a href={ link.href }>{ link.text }</a></li>) }
 
                     </ul>
                 </nav>
