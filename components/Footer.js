@@ -10,7 +10,7 @@ export default function Footer({ d }) {
                 <h2>{ d.footer_h2 }</h2>
                 <nav>
                     <ul>
-                        { d.footer_links.map((link, i) => <li key={i}><a href={ link.href }>{ link.text }</a></li>) }
+                        { d.footer_links.map((link, i) => <li key={i + link.text}><a href={ link.href }>{ link.text }</a></li>) }
                     </ul>
                     <a className="main-link" href={d.footer_main_link.href} dangerouslySetInnerHTML={{__html: d.footer_main_link.text }}></a>
                 </nav>
