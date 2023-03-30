@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
 
       
-      <Header />
+      <Header d={d} />
 
       <main lang={ locale }>
 
@@ -39,25 +39,30 @@ export default function Home() {
           <h2>{ d.recent_works_h2 }</h2>
           <div className="section-wrapper">
             
-            <div className="project project-1">
-              <div className="preview">
-                <img src="/preview-1.gif" alt="b40.kg website screenshot" />
-              </div>
-              <a href={d.recent_works_a_1} className="text-block">
-                <h3>{ d.recent_works_h3_1 }</h3>
-                <p>{ d.recent_works_p_1 }</p>
-              </a> 
-            </div>
+            <ul className="projects">
+              {d.projects.map((p, i) => {
+                return (
+                  <li className={"project project-" + (i+1)}>
 
-            <div className="project project-2">
-              <a href={d.recent_works_a_2} className="text-block">
-                <h3>{ d.recent_works_h3_2 }</h3>
-                <p>{ d.recent_works_p_2 }</p>
-              </a> 
-              <div className="preview">
-                <img src="/preview-2.gif" alt="Scriptonite website screenshot" />
-              </div>
-            </div>
+                    {!p.isInverted &&
+                      <div className="preview">
+                        <img src={p.preview_link} alt={p.preview_alt} />
+                      </div>}
+
+                    <a href={p.link} className="text-block">
+                      <h3>{ p.h }</h3>
+                      <p>{ p.p }</p>
+                    </a>
+
+                    {p.isInverted &&
+                      <div className="preview">
+                        <img src={p.preview_link} alt={p.preview_alt} />
+                      </div>}
+
+                  </li>)
+              })}
+            </ul>
+
 
             {/* <div className="project">
               <div className="preview">

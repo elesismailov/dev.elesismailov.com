@@ -1,6 +1,6 @@
 
 
-export default function Header() {
+export default function Header({ d }) {
 
     return (
 
@@ -23,10 +23,8 @@ export default function Header() {
                 </button>
                 <nav>
                     <ul>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Works</a></li>
-                        <li><a href="#">About Me</a></li>
-                        <li><a href="#">Contact Me</a></li>
+                        { d.header_links.map(link => <li><a href={ link.href }>{ link.text }</a></li>) }
+
                     </ul>
                 </nav>
                 <button className="close-hidden" onClick={ handleClose }>Close</button>
