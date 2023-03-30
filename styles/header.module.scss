@@ -101,4 +101,21 @@ header.main {
             left: -0;
         }
     }
+
+    @media only screen and (max-width: 450px) {
+        .float {
+g
+            background: var(--background-1);
+            top: 0;
+            left: 0;
+            height: 50px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            button {
+                transform: none;
+                margin-right: -16px; 
+            }
+        }
+    }
 }
