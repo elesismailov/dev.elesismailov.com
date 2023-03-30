@@ -2,6 +2,8 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head'
 
+import Header from '@/components/Header';
+
 import page_data from "./page_data.json";
 
 export default function Home() {
@@ -20,6 +22,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main lang={ locale }>
+
+        <Header />
 
         <section className="intro">
           <div className="wrapper">

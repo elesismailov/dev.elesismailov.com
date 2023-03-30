@@ -1,0 +1,104 @@
+
+header.main {
+    background: grey;
+
+
+    .cover {
+        display: none;
+        background-color: var(--background-1);
+        opacity: 0;
+        // opacity: .6;
+        transition: opacity .1s ease;
+
+        position: absolute;
+        inset: 0;
+    }
+
+    .float {
+        position: absolute;
+        width: 70px;
+
+        left: 0;                 
+        top: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        transition: left .2s ease;
+        button {
+            transform: rotate(-90deg);
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: var(--white);
+            letter-spacing: 16px;
+        }
+    }
+
+    .wrapper {
+        // display: none;
+        position: absolute;
+        background-color: var(--background-grey);
+        
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        left: -300px;
+
+        padding: 50px;
+        transition: left .2s ease;
+
+        .close {
+            border: none;
+            background: transparent;
+            margin-bottom: 80px;
+        }
+        .close-hidden {
+            width: 0;
+            height: 0;
+            margin-top: 30px;            
+            font-size: 20px;
+            border: none;
+            background: var(--background-grey);
+            color: var(--white);
+            overflow: hidden;
+            &:focus, &:hover {
+                width: unset;
+                height: unset;
+            }
+        }
+
+        nav > ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            li > a {
+                font-size: 20px;
+                color: var(--white);
+                letter-spacing: 1.5px;
+                transition: color .1s ease;
+
+                &:hover {
+                    color: var(--red);
+                }
+            }
+        }
+    }
+
+    &.opened {
+        .float {
+            left: -0;
+            button {
+                color: var(--red);
+            }
+        }
+        .cover {
+            display: block;
+            opacity: .6;
+        }
+        .wrapper {
+            left: -300px;
+        }
+    }
+}
