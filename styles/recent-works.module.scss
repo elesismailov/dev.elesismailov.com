@@ -84,4 +84,16 @@ section.recent-works {
             }
         }
     }
+    @media only screen and (max-width: 768px) {
+        .section-wrapper {
+
+            padding: 0 60px;
+        }
+    }
+    @media only screen and (max-width: 450px) {
+        .section-wrapper {
+
+            padding: 0 25px;
+        }
+    }
 }
