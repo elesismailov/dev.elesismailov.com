@@ -1,7 +1,6 @@
 
 
 export default function Footer({ d }) {
-    console.log(d)
     return (
         <footer className="main-footer">
 

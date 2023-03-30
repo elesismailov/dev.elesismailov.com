@@ -52,6 +52,56 @@
             "footer_attribution_2": "2023-present"
 
         },
-        "ru": {}
+        "ru": {
+            "h1_1": "I am <span>Eles</span>.<br/>Create.<br/>Build.",
+
+            "projects": [
+                {
+                    "link": "/works/b40",
+                    "preview_link": "/preview-1.gif",
+                    "preview_alt": "Scriptonite website screenshot",
+                    "h": "b40.kg",
+                    "p": "Multinational German-Kyrgyzstan Arbitrage Company.",
+                    "isInverted": false
+                },
+                {
+                    "link": "/works/scriptonite",
+                    "preview_link": "/preview-2.gif",
+                    "preview_alt": "Scriptonite website screenshot",
+                    "h": "Scriptonite Fan Made Page",
+                    "p": "This is a fan made page. He wanted to turn the design into a real website.",
+                    "isInverted": true
+                }
+            ],
+
+            "hire_me_h2": "Hire Me",
+            "hire_me_p": "Get in touch right now and I will answer any questions you have.",
+            "hire_me_numbers": [
+                "+996 220 592 089",
+                "+90 505 675 78 13"
+            ],
+            "hire_me_emails": [
+                "contact@eleswastaken.com"
+            ],
+
+            "header_links": [
+                {"text": "About Me", "href": "/about-me"},
+                {"text": "Works", "href": "/works"},
+                {"text": "Projects", "href": "/projects"},
+                {"text": "Hire Me", "href": "/hire-me"}
+            ],
+
+            "footer_h2": "This is my dev website",
+            "footer_links": [
+                {"text": "About Me", "href": "/about-me"},
+                {"text": "Works", "href": "/works"},
+                {"text": "Projects", "href": "/projects"},
+                {"text": "Hire Me", "href": "/hire-me"}
+            ],
+            "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
+            "footer_attribution_1": "Eles Ismailov",
+            "footer_attribution_2": "2023-present"
+
+        }
     } 
 }
