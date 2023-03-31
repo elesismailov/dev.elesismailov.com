@@ -34,6 +34,7 @@
             ],
 
             "header_links": [
+                {"text": "Main", "href": "/"},
                 {"text": "About Me", "href": "/about-me"},
                 {"text": "Works", "href": "/works"},
                 {"text": "Projects", "href": "/projects"},
@@ -42,6 +43,7 @@
 
             "footer_h2": "This is my dev website",
             "footer_links": [
+                {"text": "Main", "href": "/"},
                 {"text": "About Me", "href": "/about-me"},
                 {"text": "Works", "href": "/works"},
                 {"text": "Projects", "href": "/projects"},
@@ -49,9 +51,15 @@
             ],
             "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
             "footer_attribution_1": "Eles Ismailov",
-            "footer_attribution_2": "2023-present"
+            "footer_attribution_2": "2023-present",
 
+            "about_me": {
+                "h1": "About Me"
+            }
+            
         },
+
+
         "ru": {
             "h1_1": "I am <span>Eles</span>.<br/>Create.<br/>Build.",
 
