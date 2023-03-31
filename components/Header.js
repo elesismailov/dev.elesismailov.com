@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-export default function Header({ d }) {
+export default function Header({ data }) {
     const router = useRouter();
 
     return (
@@ -25,9 +25,9 @@ export default function Header({ d }) {
                 </button>
                 <nav>
                     <ul>
-                        { d.header_links.map((link, i) => {
+                        { data.header_links.map((link, i) => {
                             if (link.href == router.pathname) return
-                            return <li key={ i} ><Link href={ link.href }>{ link.text }</Link></li>
+                            return <li key={ i} ><Link onClick={handleClose} href={ link.href }>{ link.text }</Link></li>
                         }) }
                     </ul>
                 </nav>

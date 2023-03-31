@@ -51,11 +51,7 @@
             ],
             "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
             "footer_attribution_1": "Eles Ismailov",
-            "footer_attribution_2": "2023-present",
-
-            "about_me": {
-                "h1": "About Me"
-            }
+            "footer_attribution_2": "2023-present"
             
         },
 
