@@ -2,7 +2,7 @@
 {
     "locales": {
         "en": {
-            "h1_1": "I am <span>Eles</span>.<br/>Create.<br/>Build.",
+            "h1_1": "1I am <span>Eles</span>.<br/>Create.<br/>Build.",
 
             "projects": [
                 {
@@ -74,7 +74,7 @@
                     "link": "/works/scriptonite",
                     "preview_link": "/preview-2.gif",
                     "preview_alt": "Scriptonite website screenshot",
-                    "h": "1Scriptonite Fan Made Page",
+                    "h": "Scriptonite Fan Made Page",
                     "p": "This is a fan made page. He wanted to turn the design into a real website.",
                     "isInverted": true
                 }

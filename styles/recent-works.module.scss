@@ -38,9 +38,9 @@ section.recent-works {
     
                 .preview {
                     width: 60%;
+
                     > img {
                         object-fit: cover;
-                        height: 100%;
                     }
                 }
     
@@ -119,6 +119,9 @@ section.recent-works {
                 padding: 0 25px;
     
                 .project {
+                    .preview {
+                        max-height: 380px;
+                    }
                     .text-block {
                         h3 {
                             font-size: 2.5rem;
