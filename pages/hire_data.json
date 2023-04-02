@@ -1,0 +1,67 @@
+
+{
+    "locales": {
+        "en": {
+            "h2": "Hire Me",
+            "p": "Get in touch right now and I will answer any questions you have.",
+            "numbers": [
+                "+996 220 592 089",
+                "+90 505 675 78 13"
+            ],
+            "emails": [
+                "contact@eleswastaken.com"
+            ],
+            "header_links": [
+                {"text": "Main", "href": "/"},
+                {"text": "About Me", "href": "/about-me"},
+                {"text": "Works", "href": "/works"},
+                {"text": "Projects", "href": "/projects"},
+                {"text": "Hire Me", "href": "/hire-me"}
+            ],
+
+            "footer_h2": "This is my dev website",
+            "footer_links": [
+                {"text": "Main", "href": "/"},
+                {"text": "About Me", "href": "/about-me"},
+                {"text": "Works", "href": "/works"},
+                {"text": "Projects", "href": "/projects"},
+                {"text": "Hire Me", "href": "/hire-me"}
+            ],
+            "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
+            "footer_attribution_1": "Eles Ismailov",
+            "footer_attribution_2": "2023-present"
+            
+        },
+
+
+        "ru": {
+            "h2": "Hire Me",
+            "p": "Get in touch right now and I will answer any questions you have.",
+            "numbers": [
+                "+996 220 592 089",
+                "+90 505 675 78 13"
+            ],
+            "emails": [
+                "contact@eleswastaken.com"
+            ],
+            "header_links": [
+                {"text": "About Me", "href": "/about-me"},
+                {"text": "Works", "href": "/works"},
+                {"text": "Projects", "href": "/projects"},
+                {"text": "Hire Me", "href": "/hire-me"}
+            ],
+
+            "footer_h2": "This is my dev website",
+            "footer_links": [
+                {"text": "About Me", "href": "/about-me"},
+                {"text": "Works", "href": "/works"},
+                {"text": "Projects", "href": "/projects"},
+                {"text": "Hire Me", "href": "/hire-me"}
+            ],
+            "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
+            "footer_attribution_1": "Eles Ismailov",
+            "footer_attribution_2": "2023-present"
+
+        }
+    } 
+}

@@ -23,15 +23,17 @@
                 }
             ],
 
-            "hire_me_h2": "Hire Me",
-            "hire_me_p": "Get in touch right now and I will answer any questions you have.",
-            "hire_me_numbers": [
-                "+996 220 592 089",
-                "+90 505 675 78 13"
-            ],
-            "hire_me_emails": [
-                "contact@eleswastaken.com"
-            ],
+            "hire_me": {
+                "h2": "Hire Me",
+                "p": "Get in touch right now and I will answer any questions you have.",
+                "numbers": [
+                    "+996 220 592 089",
+                    "+90 505 675 78 13"
+                ],
+                "emails": [
+                    "contact@eleswastaken.com"
+                ]
+            },
 
             "header_links": [
                 {"text": "Main", "href": "/"},
@@ -78,15 +80,17 @@
                 }
             ],
 
-            "hire_me_h2": "Hire Me",
-            "hire_me_p": "Get in touch right now and I will answer any questions you have.",
-            "hire_me_numbers": [
-                "+996 220 592 089",
-                "+90 505 675 78 13"
-            ],
-            "hire_me_emails": [
-                "contact@eleswastaken.com"
-            ],
+            "hire_me": {
+                "h2": "Hire Me",
+                "p": "Get in touch right now and I will answer any questions you have.",
+                "numbers": [
+                    "+996 220 592 089",
+                    "+90 505 675 78 13"
+                ],
+                "emails": [
+                    "contact@eleswastaken.com"
+                ]
+            },
 
             "header_links": [
                 {"text": "About Me", "href": "/about-me"},

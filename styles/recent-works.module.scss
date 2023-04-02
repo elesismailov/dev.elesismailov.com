@@ -1,6 +1,17 @@
 section.recent-works {
     margin-top: 90px;
 
+    hr {
+
+        width: 400px;
+        margin: auto;
+        margin-top: 200px;
+        border: none;
+        height: 2px;
+        background-color: var(--red);
+
+    }
+
     h2 {
         text-align: center;
         font-size: 4rem;
@@ -95,6 +106,9 @@ section.recent-works {
                 padding: 0 60px;
             }
         }
+        hr {
+            width: 33%;
+        }
     }
     @media only screen and (max-width: 450px) {
         h2 {
@@ -115,4 +129,5 @@ section.recent-works {
             }
         }
     }
+    
 }
