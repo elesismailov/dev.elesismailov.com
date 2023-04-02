@@ -17,21 +17,25 @@ export default function Contact() {
 
   if (locale) {
 	return (
-	  <>
-	  <Head>
-		<title>Hire Me</title>
-		<meta name="description" lang={ locale } content="Eles Ismailov Web Developer" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" href="/favicon.ico" />
-	  </Head>
-	  <main lang= { locale }>
+		<>
+			<Head>
+				<title>Hire Me</title>
+				<meta name="description" lang={locale} content="Eles Ismailov Web Developer" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 
-		<Header data={data} />
+			<Header data={data} />
 
-		<HireMe data={data} />
+			<main lang={locale}>
 
-		<Footer data={data} />
-	  </main>
+				<div className="hire-me-page-wrapper">
+					<HireMe data={data} />
+				</div>
+
+			</main>
+
+			<Footer data={data} />
 	</>
 	)
   }
