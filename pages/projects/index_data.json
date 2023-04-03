@@ -18,6 +18,7 @@
                     "title": "Scriptonite Fan Made Page",
                     "description": [
                         "This project was done for my friend who designed the whole page.",
+                        "Scriptonite is kazakh rapper and song writer.",
                         ""
                     ],
                     "preview": "/preview-2.png",
@@ -28,10 +29,24 @@
             
                 },
                 {
-                    "title": "REST Countries API",
+                    "title": "elesismailov.com",
                     "description": [
-                        "First time using react.",
-                        "It was pretty tough, but I loved it. Once you get the hang of it, it is hard to do things the other way."
+                        "This website integrates blog and email list applications.",
+                        "It is my main website.",
+                        "Everything was coded by me including blog and email list app."
+                    ],
+                    "preview": "/elesismailov.com-preview.png",
+                    "previewAltText": "Scriptonite Web Page Screenshot",
+                    "githubLink": "https://github.com/elesismailov/elesismailov.com",
+                    "link": "http://elesismailov.com",
+                    "tags": ["Next.js", "Responsive", "SASS", "MongoDB"]
+            
+                },
+                {
+                    "title": "Where in the world?",
+                    "description": [
+                        "Countries Information App.",
+                        "It helps you quickly search info about a country and see their flag."
                     ],
                     "preview": "/countries-preview.png",
                     "previewAltText": "REST Countries API",
@@ -47,8 +62,7 @@
                     "githubLink": "https://github.com/elesismailov/front-end/tree/main/31%20Room%20LP",
                     "link": "https://front-end.eleswastaken.com/31%20Room%20LP/index.html",
                     "description": [
-                        "This challenge I used the power of the flexbox to line out everthing.",
-                        "This was my first challenge using Tailwind CSS."
+                        "Very elegant landing page."
                     ],
                     "tags": ["Responsive", "TailwindCSS"]
                 }
