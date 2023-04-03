@@ -27,7 +27,7 @@ export default function ProjectsIndex() {
             
             <h1>{ data.h1 }</h1>
 
-            <ProjectsSection data={data}/>
+            <ProjectsSection data={data.projects}/>
         </main>
 
         <Footer data={data} />

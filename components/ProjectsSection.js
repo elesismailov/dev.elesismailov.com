@@ -4,7 +4,7 @@ export default function ProjectsSection({data}) {
     return (<>
         <section className="projects">
             <ul className="projects">
-                {data.projects.map((p, i) => Project({p: p, key: i}))}
+                {data.map((p, i) => Project({p: p, key: i}))}
             </ul>
         </section>
 

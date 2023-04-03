@@ -35,6 +35,10 @@ header.main {
             background: transparent;
             color: var(--white);
             letter-spacing: 16px;
+            padding: 10px 30px;
+            position: absolute;
+            left: -60px;
+            
         }
     }
 
@@ -119,7 +123,8 @@ header.main {
             align-items: center;
             button {
                 transform: none;
-                margin-right: -16px; 
+                margin-right: -16px;
+                position: unset;
             }
         }
     }
@@ -137,7 +142,9 @@ header.main {
             align-items: center;
             button {
                 transform: none;
-                margin-right: -16px; 
+                margin-right: -16px;
+                position: unset;
+
             }
         }
         
