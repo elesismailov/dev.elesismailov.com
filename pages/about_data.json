@@ -30,6 +30,7 @@
             "h1_1": "I am <span>Eles</span>.<br/>Create.<br/>Build.",
 
             "header_links": [
+                {"text": "Main", "href": "/"},
                 {"text": "About Me", "href": "/about-me"},
                 {"text": "Works", "href": "/works"},
                 {"text": "Projects", "href": "/projects"},
@@ -38,6 +39,7 @@
 
             "footer_h2": "This is my dev website",
             "footer_links": [
+                {"text": "Main", "href": "/"},
                 {"text": "About Me", "href": "/about-me"},
                 {"text": "Works", "href": "/works"},
                 {"text": "Projects", "href": "/projects"},

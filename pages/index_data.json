@@ -36,18 +36,14 @@
             },
 
             "header_links": [
-                {"text": "Main", "href": "/"},
-                {"text": "About Me", "href": "/about-me"},
-                {"text": "Works", "href": "/works"},
+                {"text": "Home", "href": "/"},
                 {"text": "Projects", "href": "/projects"},
                 {"text": "Hire Me", "href": "/hire-me"}
             ],
 
-            "footer_h2": "This is my dev website",
+            "footer_h2": "Experienced Web Developer",
             "footer_links": [
-                {"text": "Main", "href": "/"},
-                {"text": "About Me", "href": "/about-me"},
-                {"text": "Works", "href": "/works"},
+                {"text": "Home", "href": "/"},
                 {"text": "Projects", "href": "/projects"},
                 {"text": "Hire Me", "href": "/hire-me"}
             ],
@@ -93,16 +89,12 @@
             },
 
             "header_links": [
-                {"text": "About Me", "href": "/about-me"},
-                {"text": "Works", "href": "/works"},
                 {"text": "Projects", "href": "/projects"},
                 {"text": "Hire Me", "href": "/hire-me"}
             ],
 
-            "footer_h2": "This is my dev website",
+            "footer_h2": "Experienced Web Developer",
             "footer_links": [
-                {"text": "About Me", "href": "/about-me"},
-                {"text": "Works", "href": "/works"},
                 {"text": "Projects", "href": "/projects"},
                 {"text": "Hire Me", "href": "/hire-me"}
             ],

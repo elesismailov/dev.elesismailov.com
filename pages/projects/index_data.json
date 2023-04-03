@@ -1,0 +1,36 @@
+{
+    "locales": {
+        "en": {
+            "h1": "Projects",
+
+            "projects": [
+                {
+                    "title": "B40",
+                    "description": [""],
+                    "imgURL": "./assets/screenshots/4.png",
+                    "imgAltText": "REST Countries API",
+                    "githubRepoURL": "https://github.com/eleswastaken/front-end/tree/main/41%20Countries/react",
+                    "livePreviewURL": "https://eleswastaken-front-end-countries-api-gui.netlify.app/",
+                    "tags": ["react js", "tailwind css", "react-router"]
+            
+                }
+            ],
+
+            "header_links": [
+                {"text": "Home", "href": "/"},
+                {"text": "Projects", "href": "/projects"},
+                {"text": "Hire Me", "href": "/hire-me"}
+            ],
+
+            "footer_h2": "Experienced Web Developer",
+            "footer_links": [
+                {"text": "Home", "href": "/"},
+                {"text": "Projects", "href": "/projects"},
+                {"text": "Hire Me", "href": "/hire-me"}
+            ],
+            "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
+            "footer_attribution_1": "Eles Ismailov",
+            "footer_attribution_2": "2023-present"
+        }
+    }
+}
