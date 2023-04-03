@@ -9,17 +9,20 @@
                     "description": ["It was made to be scalable in the future. Instead of making it a static page, I made it a full-stack app.", "The back end is Next.js which tracks language locales(/ru, /en) and dynamically renders them."],
                     "preview": "/preview-1.png",
                     "previewAltText": "B40 Web Page Screenshot",
-                    "githubLink": "http://b40.kg",
+                    "githubLink": "",
                     "link": "http://b40.kg/",
                     "tags": ["Next.js", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Responsive"]
             
                 },
                 {
                     "title": "Scriptonite Fan Made Page",
-                    "description": [""],
+                    "description": [
+                        "This project was done for my friend who designed the whole page.",
+                        ""
+                    ],
                     "preview": "/preview-2.png",
                     "previewAltText": "Scriptonite Web Page Screenshot",
-                    "githubLink": "",
+                    "githubLink": "https://github.com/elesismailov/scriptonite-website",
                     "link": "http://skriptonit-page.vercel.app/",
                     "tags": ["Next.js", "Animations", "Responsive"]
             
