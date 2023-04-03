@@ -11,7 +11,7 @@
                     "previewAltText": "B40 Web Page Screenshot",
                     "githubLink": "",
                     "link": "http://b40.kg/",
-                    "tags": ["Next.js", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Responsive"]
+                    "tags": ["Next.js", "SASS", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Responsive"]
             
                 },
                 {
@@ -24,8 +24,33 @@
                     "previewAltText": "Scriptonite Web Page Screenshot",
                     "githubLink": "https://github.com/elesismailov/scriptonite-website",
                     "link": "http://skriptonit-page.vercel.app/",
-                    "tags": ["Next.js", "Animations", "Responsive"]
+                    "tags": ["Next.js", "Animations", "Responsive", "SASS"]
             
+                },
+                {
+                    "title": "REST Countries API",
+                    "description": [
+                        "First time using react.",
+                        "It was pretty tough, but I loved it. Once you get the hang of it, it is hard to do things the other way."
+                    ],
+                    "preview": "/countries-preview.png",
+                    "previewAltText": "REST Countries API",
+                    "githubLink": "https://github.com/elesismailov/front-end/tree/main/41%20Countries/react",
+                    "link": "https://eleswastaken-front-end-countries-api-gui.netlify.app/",
+                    "tags": ["React.js", "TailwindCSS", "Single Page App", "Dark Mode", "REST API", "Responsive"]
+                },
+                
+                {
+                    "title": "Room Landing Page",
+                    "preview": "/room-lp-preview.png",
+                    "previewAltText": "Room - Furniture Company Landing Page",
+                    "githubLink": "https://github.com/elesismailov/front-end/tree/main/31%20Room%20LP",
+                    "link": "https://front-end.eleswastaken.com/31%20Room%20LP/index.html",
+                    "description": [
+                        "This challenge I used the power of the flexbox to line out everthing.",
+                        "This was my first challenge using Tailwind CSS."
+                    ],
+                    "tags": ["Responsive", "TailwindCSS"]
                 }
             ],
 
