@@ -21,8 +21,6 @@ export default function Contact() {
 			<Head>
 				<title>Hire Me</title>
 				<meta name="description" lang={locale} content="Eles Ismailov Web Developer" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<Header data={data} />
