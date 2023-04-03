@@ -69,27 +69,43 @@
         },
 
 
+        
         "ru": {
             "h1_1": "I am <span>Eles</span>.<br/>Create.<br/>Build.",
 
-            "projects": [
-                {
-                    "link": "/works/b40",
-                    "preview_link": "/preview-1.gif",
-                    "preview_alt": "Scriptonite website screenshot",
-                    "h": "b40.kg",
-                    "p": "Multinational German-Kyrgyzstan Arbitrage Company.",
-                    "isInverted": false
-                },
-                {
-                    "link": "/works/scriptonite",
-                    "preview_link": "/preview-2.gif",
-                    "preview_alt": "Scriptonite website screenshot",
-                    "h": "Scriptonite Fan Made Page",
-                    "p": "This is a fan made page. He wanted to turn the design into a real website.",
-                    "isInverted": true
-                }
-            ],
+            "recent_works": {
+                "h2": "Recent Works",
+                "cta": "View All Works",
+                "projects": [
+                    {
+                        "title": "B40.KG",
+                        "description": [
+                            "Multinational German-Kyrgyzstan Arbitrage Company.",
+                            "It was made to be scalable in the future. Instead of making it a static page, I made it a full-stack app.", 
+                            "The back end is Next.js which tracks language locales(/ru, /en) and dynamically renders them."
+                        ],
+                        "preview": "/preview-1.png",
+                        "previewAltText": "B40 Web Page Screenshot",
+                        "githubLink": "",
+                        "link": "http://b40.kg/",
+                        "tags": ["Next.js", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Responsive"]
+                
+                    },
+                    {
+                        "title": "Scriptonite Fan Made Page",
+                        "description": [
+                            "This project was done for my friend who designed the whole page.",
+                            ""
+                        ],
+                        "preview": "/preview-2.png",
+                        "previewAltText": "Scriptonite Web Page Screenshot",
+                        "githubLink": "https://github.com/elesismailov/scriptonite-website",
+                        "link": "http://skriptonit-page.vercel.app/",
+                        "tags": ["Next.js", "Animations", "Responsive"]
+                
+                    }
+                ]
+            },
 
             "hire_me": {
                 "h2": "Hire Me",
@@ -104,19 +120,21 @@
             },
 
             "header_links": [
+                {"text": "Home", "href": "/"},
                 {"text": "Projects", "href": "/projects"},
                 {"text": "Hire Me", "href": "/hire-me"}
             ],
 
             "footer_h2": "Experienced Web Developer",
             "footer_links": [
+                {"text": "Home", "href": "/"},
                 {"text": "Projects", "href": "/projects"},
                 {"text": "Hire Me", "href": "/hire-me"}
             ],
             "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
             "footer_attribution_1": "Eles Ismailov",
             "footer_attribution_2": "2023-present"
-
+            
         }
     } 
 }
