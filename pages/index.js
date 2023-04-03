@@ -42,10 +42,12 @@ export default function Home() {
 
           <section className="recent-works">
             <h2>{data.recent_works.h2}</h2>
+            
+            <div className="wrapper">
+              <ProjectsSection data={data.recent_works.projects} />
+            </div>
 
-            <ProjectsSection data={data.recent_works.projects} />
-
-            <Link href="/projects" locale={locale} className="projects-cta">View All</Link>
+            <Link href="/projects" locale={locale} className="projects-cta">{data.recent_works.cta}</Link>
 
             <hr className='works-seperator'/>
           </section>

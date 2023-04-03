@@ -26,8 +26,9 @@ export default function ProjectsIndex() {
         <main className='projects-page'>
             
             <h1>{ data.h1 }</h1>
-
-            <ProjectsSection data={data.projects}/>
+            <div className="wrapper">
+                <ProjectsSection data={data.projects}/>
+            </div>
         </main>
 
         <Footer data={data} />

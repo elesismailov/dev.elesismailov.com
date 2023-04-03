@@ -8,11 +8,35 @@ main.projects-page {
         text-align: center;
         margin-top: 4rem;
     }
+    .wrapper {
+        padding: 4rem 4rem 8rem;
+    }
+        
+    @media only screen and (max-width: 1024px) {
+        .wrapper {
+            padding: 3rem 3rem 7rem;
+        }
+    
+    }
+    @media only screen and (max-width: 768px) {
+        .wrapper {
+            gap: 3rem;
+        }
+    }
+    @media only screen and (max-width: 450px) {
+        .wrapper {
+            padding: 2rem 2rem 6rem ;
+        }
+    }
     @media only screen and (min-width: 1536px) {
         h1 {
             margin-top: 8rem;
         }
+        .wrapper {
+            margin-bottom: auto;
+        }
     }
+    
 }
 
 section.projects {
@@ -29,7 +53,7 @@ section.projects {
     
         margin-top: 2rem;
     
-        padding: 4rem 4rem 8rem;
+        // padding: 4rem 4rem 8rem;
         
     
         .project {
@@ -99,15 +123,11 @@ section.projects {
                         li {
                             margin: 0.5rem;
                             border-radius: 0.375rem;
-                            // background-color: var(--white);
-                            background-color: var(--red);
-                            border: 1px solid var(--red);
-                            padding-top: 0.3rem;
-                            padding-bottom: 0.3rem;
-                            padding-left: 0.5rem;
-                            padding-right: 0.5rem;
-                            color: var(--white);
-                            // color: var(--red);
+                            background-color: var(--white);
+
+                            padding: 0.3rem 0.5rem;
+
+                            color: var(--background-1);
                             font-weight: 500;
                         }
                     }
@@ -134,28 +154,28 @@ section.projects {
         }
     }
     
-    @media only screen and (max-width: 1024px) {
-        .projects {
-            padding: 3rem 3rem 7rem;
-        }
+    // @media only screen and (max-width: 1024px) {
+    //     .projects {
+    //         padding: 3rem 3rem 7rem;
+    //     }
     
-    }
+    // }
     @media only screen and (max-width: 768px) {
         .projects {
             gap: 3rem;
         }
     }
-    @media only screen and (max-width: 450px) {
-        .projects {
-            padding: 2rem 2rem 6rem ;
-        }
-    }
-    @media only screen and (min-width: 1536px) {
-        h1 {
-            margin-top: 8rem;
-        }
-        .projects {
-            margin-bottom: auto;
-        }
-    }
+    // @media only screen and (max-width: 450px) {
+    //     .projects {
+    //         padding: 2rem 2rem 6rem ;
+    //     }
+    // }
+    // @media only screen and (min-width: 1536px) {
+    //     h1 {
+    //         margin-top: 8rem;
+    //     }
+    //     .projects {
+    //         margin-bottom: auto;
+    //     }
+    // }
 }

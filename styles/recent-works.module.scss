@@ -6,7 +6,7 @@ section.recent-works {
         width: 400px;
         margin: auto;
         border: none;
-        height: 2px;
+        height: 1px;
         background-color: var(--red);
 
     }
@@ -17,18 +17,44 @@ section.recent-works {
         font-weight: 400;
     }
 
-    @media only screen and (max-width: 1024px) {
-    }
-    @media only screen and (max-width: 768px) {
+    .projects-cta {
+        background-color: var(--red);
+        color: var(--white);
+        padding: .6rem 1.7rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
 
+        display: block;
+        max-width: 220px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+
+    .wrapper {
+        padding: 4rem 4rem 6rem;
+    }
+        
+    @media only screen and (max-width: 1024px) {
+        .wrapper {
+            padding: 3rem 3rem 6rem;
+        }}
+    @media only screen and (max-width: 768px) {
         hr {
             width: 33%;
         }
-    }
+        .wrapper {
+            gap: 3rem;
+        }}
     @media only screen and (max-width: 450px) {
         h2 {
             font-size: 3rem;
         }
-    }
-    
+        .wrapper {
+            padding: 2rem 2rem 6rem ;
+        }}
+    @media only screen and (min-width: 1536px) {
+        .wrapper {
+            margin-bottom: auto;
+        }}   
 }

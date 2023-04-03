@@ -6,6 +6,7 @@
 
             "recent_works": {
                 "h2": "Recent Works",
+                "cta": "View All Works",
                 "projects": [
                     {
                         "title": "B40.KG",
