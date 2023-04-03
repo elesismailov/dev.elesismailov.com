@@ -4,6 +4,8 @@
 @import './hire-me.module.scss';
 @import './recent-works.module.scss';
 
+@import './Projects.module.scss';
+
 :root {
   --max-width: 1560px;
 
@@ -49,4 +51,8 @@ img, svg, video {
 
 a {
   text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
 }

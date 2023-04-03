@@ -5,13 +5,23 @@
 
             "projects": [
                 {
-                    "title": "B40",
+                    "title": "B40.KG",
+                    "description": ["It was made to be scalable in the future. Instead of making it a static page, I made it a full-stack app.", "The back end is Next.js which tracks language locales(/ru, /en) and dynamically renders them."],
+                    "preview": "/preview-1.png",
+                    "previewAltText": "B40 Web Page Screenshot",
+                    "githubLink": "http://b40.kg",
+                    "link": "http://b40.kg/",
+                    "tags": ["Next.js", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Responsive"]
+            
+                },
+                {
+                    "title": "Scriptonite Fan Made Page",
                     "description": [""],
-                    "imgURL": "./assets/screenshots/4.png",
-                    "imgAltText": "REST Countries API",
-                    "githubRepoURL": "https://github.com/eleswastaken/front-end/tree/main/41%20Countries/react",
-                    "livePreviewURL": "https://eleswastaken-front-end-countries-api-gui.netlify.app/",
-                    "tags": ["react js", "tailwind css", "react-router"]
+                    "preview": "/preview-2.png",
+                    "previewAltText": "Scriptonite Web Page Screenshot",
+                    "githubLink": "",
+                    "link": "http://skriptonit-page.vercel.app/",
+                    "tags": ["Next.js", "Animations", "Responsive"]
             
                 }
             ],
