@@ -15,7 +15,7 @@ function Project({p, key}) {
     return (
     <li key={key} className="project ">
         <div className="preview " >
-            <a href={p.link} target="_blank" className="" tabindex="-1">
+            <a href={p.link} target="_blank" className="" tabIndex="-1">
                 <img src={p.preview} alt={p.previewAltText} className="" width="448" height="250" />
             </a>
         </div>
