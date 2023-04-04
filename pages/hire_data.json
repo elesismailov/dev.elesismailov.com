@@ -17,7 +17,7 @@
                 {"text": "Hire Me", "href": "/hire-me"}
             ],
 
-            "footer_h2": "Experienced Web Developer",
+            "footer_h2": "",
             "footer_links": [
                 {"text": "Home", "href": "/"},
                 {"text": "Projects", "href": "/projects"},
@@ -31,8 +31,8 @@
 
 
         "ru": {
-            "h2": "Hire Me",
-            "p": "Get in touch right now and I will answer any questions you have.",
+            "h2": "Работать со мной",
+            "p": "Свяжитесь прямо сейчас и Я отвечу на все Ваши вопросы.",
             "numbers": [
                 "+996 220 592 089",
                 "+90 505 675 78 13"
@@ -41,20 +41,20 @@
                 "contact@eleswastaken.com"
             ],
             "header_links": [
-                {"text": "Home", "href": "/"},
-                {"text": "Projects", "href": "/projects"},
-                {"text": "Hire Me", "href": "/hire-me"}
+                {"text": "Домой", "href": "/"},
+                {"text": "Проекты", "href": "/projects"},
+                {"text": "Работать со мной", "href": "/hire-me"}
             ],
 
-            "footer_h2": "Experienced Web Developer",
+            "footer_h2": "",
             "footer_links": [
-                {"text": "Home", "href": "/"},
-                {"text": "Projects", "href": "/projects"},
-                {"text": "Hire Me", "href": "/hire-me"}
+                {"text": "Домой", "href": "/"},
+                {"text": "Проекты", "href": "/projects"},
+                {"text": "Работать со мной", "href": "/hire-me"}
             ],
-            "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
-            "footer_attribution_1": "Eles Ismailov",
-            "footer_attribution_2": "2023-present"
+            "footer_main_link": {"text": "Основной сайт - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
+            "footer_attribution_1": "Элес Исмаилов",
+            "footer_attribution_2": "2023"
             
         }
     } 

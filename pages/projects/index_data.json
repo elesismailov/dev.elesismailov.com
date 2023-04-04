@@ -78,7 +78,7 @@
                 {"text": "Hire Me", "href": "/hire-me"}
             ],
 
-            "footer_h2": "Experienced Web Developer",
+            "footer_h2": "",
             "footer_links": [
                 {"text": "Home", "href": "/"},
                 {"text": "Projects", "href": "/projects"},
@@ -97,58 +97,55 @@
                 {
                     "title": "B40.KG",
                     "description": [
-                        "Multinational German-Kyrgyzstan Arbitrage Company.",
-                        "It was made to be scalable in the future. Instead of making it a static page, I made it a full-stack app.",
-                        "The back end is Next.js which tracks language locales(/ru, /en) and dynamically renders them."
+                        "Международная Арбитраж Компания.",
+                        "Этот проект был сделан для нескольких стран с возможностью переключать языки."
                     ],
                     "preview": "/preview-1.png",
                     "previewAltText": "B40 Web Page Screenshot",
                     "githubLink": "",
                     "link": "http://b40.kg/",
-                    "tags": ["Next.js", "SASS", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Responsive"]
+                    "tags": ["Next.js", "Несколько Языков", "Настройка Домена", "Настройка Почты", "Встроенные Карты", "Адаптивная"]
             
                 },
                 {
-                    "title": "Scriptonite Fan Made Page",
+                    "title": "Скриптонит Страница",
                     "description": [
-                        "This project was done for my friend who designed the whole page.",
-                        "Scriptonite is kazakh rapper and song writer.",
+                        "Этот проект был сделал по просьбе моего друга, кто сделал дизайн этого сайта.",
                         ""
                     ],
                     "preview": "/preview-2.png",
                     "previewAltText": "Scriptonite Web Page Screenshot",
                     "githubLink": "https://github.com/elesismailov/scriptonite-website",
                     "link": "http://skriptonit-page.vercel.app/",
-                    "tags": ["Next.js", "Animations", "Responsive", "SASS"]
-            
+                    "tags": ["Next.js", "Анимации", "Адаптивная"]
                 },
-                {
-                    "title": "elesismailov.com",
-                    "description": [
-                        "This website integrates blog and email list applications.",
-                        "It is my main website.",
-                        "Everything was coded by me including blog and email list app."
-                    ],
-                    "preview": "/elesismailov.com-preview.png",
-                    "previewAltText": "Scriptonite Web Page Screenshot",
-                    "githubLink": "https://github.com/elesismailov/elesismailov.com",
-                    "link": "http://elesismailov.com",
-                    "tags": ["Next.js", "Responsive", "SASS", "MongoDB"]
-            
-                },
+
                 {
                     "title": "Where in the world?",
                     "description": [
-                        "Countries Information App.",
-                        "It helps you quickly search info about a country and see their flag."
+                        "Приложение с информацией на страны.",
+                        "Есть возможности поиска, фильтрации по регионам, континетам, а также сброс фильтров."
                     ],
                     "preview": "/countries-preview.png",
                     "previewAltText": "REST Countries API",
                     "githubLink": "https://github.com/elesismailov/front-end/tree/main/41%20Countries/react",
                     "link": "https://eleswastaken-front-end-countries-api-gui.netlify.app/",
-                    "tags": ["React.js", "TailwindCSS", "Single Page App", "Dark Mode", "REST API", "Responsive"]
+                    "tags": ["React.js", "TailwindCSS", "Single Page App", "Dark Mode", "REST API", "Адаптивная"]
                 },
-                
+                {
+                    "title": "elesismailov.com",
+                    "description": [
+                        "Это мой персональный вебсайт.",
+                        "В него встроен полностью независимый Блог. А также приложение по сборке имейлов и рассылки.",
+                        "Все было сделано вручную."
+                    ],
+                    "preview": "/elesismailov.com-preview.png",
+                    "previewAltText": "Scriptonite Web Page Screenshot",
+                    "githubLink": "https://github.com/elesismailov/elesismailov.com",
+                    "link": "http://elesismailov.com",
+                    "tags": ["Next.js", "Адаптивная", "SASS", "MongoDB"]
+            
+                },  
                 {
                     "title": "Room Landing Page",
                     "preview": "/room-lp-preview.png",
@@ -156,27 +153,26 @@
                     "githubLink": "https://github.com/elesismailov/front-end/tree/main/31%20Room%20LP",
                     "link": "https://front-end.eleswastaken.com/31%20Room%20LP/index.html",
                     "description": [
-                        "Very elegant landing page."
+                        "Элегантный лэндинг для мебельной компании."
                     ],
-                    "tags": ["Responsive", "TailwindCSS"]
+                    "tags": ["Адаптивная", "TailwindCSS"]
                 }
             ],
-
             "header_links": [
-                {"text": "Home", "href": "/"},
-                {"text": "Projects", "href": "/projects"},
-                {"text": "Hire Me", "href": "/hire-me"}
+                {"text": "Домой", "href": "/"},
+                {"text": "Проекты", "href": "/projects"},
+                {"text": "Работать со мной", "href": "/hire-me"}
             ],
 
-            "footer_h2": "Experienced Web Developer",
+            "footer_h2": "",
             "footer_links": [
-                {"text": "Home", "href": "/"},
-                {"text": "Projects", "href": "/projects"},
-                {"text": "Hire Me", "href": "/hire-me"}
+                {"text": "Домой", "href": "/"},
+                {"text": "Проекты", "href": "/projects"},
+                {"text": "Работать со мной", "href": "/hire-me"}
             ],
-            "footer_main_link": {"text": "Main website - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
-            "footer_attribution_1": "Eles Ismailov",
-            "footer_attribution_2": "2023-present"
+            "footer_main_link": {"text": "Основной сайт - <span>elesismailov.com</span>", "href": "http://elesismailov.com"},
+            "footer_attribution_1": "Элес Исмаилов",
+            "footer_attribution_2": "2023"
         }
     }
 }
