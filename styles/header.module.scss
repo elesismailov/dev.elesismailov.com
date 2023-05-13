@@ -77,6 +77,25 @@ header.main {
                 height: unset;
             }
         }
+        .github-link {
+            height: 2.5rem;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            background: var(--background-1);
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem;
+            color: var(--white);
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: color .1s ease-in-out;
+            &:hover {
+                color: var(--red);
+            }
+        }
 
         .language-dropdown {
             color: var(--background-1);
