@@ -69,13 +69,13 @@ export default function Home() {
                     </section>
 
                     <section className="recent-works">
-                        <h2>{data.recent_works.h2}</h2>
+                        <h2>Recent Works</h2>
 
                         <div className="wrapper">
-                            <ProjectsSection data={data.recent_works.projects} />
+                            <ProjectsSection data={recent_projects} />
                         </div>
 
-                        <Link href="/projects" locale={locale} className="projects-cta">{data.recent_works.cta}</Link>
+                        <Link href="/projects" locale={locale} className="bg-red-500 text-white p-3.5 px-7 rounded-lg font-medium block max-w-64 mx-auto text-center hover:bg-red-400 mb-12">View All Projects</Link>
 
                         <hr className='works-seperator' />
                     </section>
@@ -94,3 +94,31 @@ export default function Home() {
     }
 }
 
+const recent_projects = [
+    {
+        "title": "Ink. Agency",
+        "description": [
+            "Email copywriting agency.",
+            "Eveything was done from scratch.",
+            "Including design, assests, and copy of the page. And of course the coding part.", 
+			"Contact Form was implemented by using Web3Forms service."
+        ],
+        "preview": "/previews/ink-agency-preview.jpeg",
+        "previewAltText": "Ink. Agency Website preview",
+        "link": "http://ink-agency.vercel.app/",
+        "tags": ["Next.js", "TailwindCSS", "Domain Set Up", "Contact Form", "Responsive"] 
+    
+    },
+    {
+        "title": "Luxe Salon Agency",
+        "description": [
+            "Sales & Marketing Agency targeting beauty salons.",
+            "Work inlcluded: desiging assets and the website, coding & deploying the website.",
+            "One of my favorite parts is the color palette of the page."
+        ],
+        "preview": "/previews/luxe-salon-preview.png",
+        "previewAltText": "Scriptonite Web Page Screenshot",
+        "link": "https://luxe-salon-website-56475796.vercel.app/",
+        "tags": ["Next.js", "TailwindCSS", "Domain Set Up", "Responsive"] 
+    }
+];

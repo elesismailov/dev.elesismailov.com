@@ -8,6 +8,7 @@ footer.main-footer {
         margin: auto;
 
         padding: 50px 110px 30px;
+        text-align: center;
 
         h2 {
             font-size: 2rem;
@@ -16,6 +17,7 @@ footer.main-footer {
         .logo {
             max-width: 26px;
             margin-bottom: 40px;
+            display: none;
             a {
                 .img-wrapper {
                     margin: auto;
@@ -35,7 +37,7 @@ footer.main-footer {
             gap: 12px;
 
             li a {
-                color: var(--text-color);
+                color: white;
                 font-size: 18px;
                 font-weight: 200;
                 transition: color .1s ease;
@@ -50,7 +52,7 @@ footer.main-footer {
             margin-top: 60px; 
             display: inline-block;
 
-            color: var(--text-color);
+            color: white;
             font-size: 18px;
             font-weight: 200;
             transition: color .1s ease;

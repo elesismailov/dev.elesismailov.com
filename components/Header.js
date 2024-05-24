@@ -18,8 +18,8 @@ export default function Header({ data }) {
             <div className="wrapper">
                 <button className="close" onClick={ handleClose }>
                     <svg width="32" height="33" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 3L34.5 34.5" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-                        <path d="M3 35L34.5 3.5" stroke="black" strokeWidth="5" strokeLinecap="round"/>
+                        <path d="M3 3L34.5 34.5" stroke="#fff" strokeWidth="5" strokeLinecap="round"/>
+                        <path d="M3 35L34.5 3.5" stroke="#fff" strokeWidth="5" strokeLinecap="round"/>
                     </svg>
                 </button>
                 <a href='http://github.com/elesismailov' target="_blank" aria-label="Github Repository" className="github-link">
@@ -38,7 +38,7 @@ export default function Header({ data }) {
                     </ul>
                 </nav>
 
-                <LanguageDropdown />
+                {/* <LanguageDropdown /> */}
 
                 <button className="close-hidden" onClick={ handleClose }>Close</button>
             </div>

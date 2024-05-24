@@ -27,7 +27,7 @@ export default function Footer({ data }) {
                             return <li key={i}><Link  href={ link.href }>{ link.text }</Link></li>
                         }) }
                     </ul>
-                    <a className="main-link external" target="_blank" href={data.footer_main_link.href} dangerouslySetInnerHTML={{__html: data.footer_main_link.text }}></a>
+                    {/* <a className="main-link external" target="_blank" href={data.footer_main_link.href} dangerouslySetInnerHTML={{__html: data.footer_main_link.text }}></a> */}
                 </nav>
 
                 <div className="attribution">
