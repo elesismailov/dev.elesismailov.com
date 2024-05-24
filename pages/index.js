@@ -68,7 +68,7 @@ export default function Home() {
                         </div>
                     </section>
 
-                    <section className="recent-works">
+                    <section className="recent-works mb-16">
                         <h2>Recent Works</h2>
 
                         <div className="wrapper">
@@ -77,7 +77,6 @@ export default function Home() {
 
                         <Link href="/projects" locale={locale} className=" text-red-500 border-red-500 border-2 p-3.5 px-7 rounded-lg font-medium block max-w-64 mx-auto text-center hover:text-white hover:bg-red-500 mb-12">View All Projects</Link>
 
-                        <hr className='works-seperator' />
                     </section>
 
 

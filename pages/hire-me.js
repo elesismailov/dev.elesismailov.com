@@ -27,7 +27,7 @@ export default function Contact() {
 
 			<main lang={locale}>
 
-				<div className="hire-me-page-wrapper">
+				<div className="hire-me-page-wrapper pt-20">
 					<HireMe data={data} />
 				</div>
 

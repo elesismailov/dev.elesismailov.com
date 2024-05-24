@@ -23,6 +23,10 @@
   --bg-2-color: #fff;
 }
 
+.white-link {
+  @apply text-white flex gap-2 items-center m-auto w-full justify-center hover:text-red-500 font-thin
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
