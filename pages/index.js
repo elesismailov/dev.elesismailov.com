@@ -29,13 +29,13 @@ export default function Home() {
 
                 <Header data={data} />
 
-                <main lang={locale} className=''>
+                <main lang={locale} className='font-["Ubuntu"]'>
 
                     <section className="hero-section">
                         <div className="wrapper wrapper wrapper max-w-screen-2xl mx-auto h-[95vh] flex items-center pl-7
                         sm:pl-20
                         md:pl-56">
-                            <h1 className="text-7xl font-normal leading-snug
+                            <h1 className="text-7xl text-black font-[500] leading-snug
                                 sm:text-8xl
                                 md:text-9xl">
                                 I am <span className='text-[#F23737]'>Eles</span>.<br/>Create.<br/>Build.
@@ -46,7 +46,7 @@ export default function Home() {
                     <section className="testimonial
                         ">
                         <div className="wrapper
-                            bg-gray-800 text-white max-w-2xl m-auto overflow-hidden py-10 px-7
+                            bg-black text-white max-w-2xl m-auto overflow-hidden py-10 px-7
                             sm:rounded-xl sm:py-8 sm:px-9
                             ">
                                 <div className="header-wrapper
@@ -75,7 +75,7 @@ export default function Home() {
                             <ProjectsSection data={recent_projects} />
                         </div>
 
-                        <Link href="/projects" locale={locale} className="bg-red-500 text-white p-3.5 px-7 rounded-lg font-medium block max-w-64 mx-auto text-center hover:bg-red-400 mb-12">View All Projects</Link>
+                        <Link href="/projects" locale={locale} className=" text-red-500 border-red-500 border-2 p-3.5 px-7 rounded-lg font-medium block max-w-64 mx-auto text-center hover:text-white hover:bg-red-500 mb-12">View All Projects</Link>
 
                         <hr className='works-seperator' />
                     </section>
