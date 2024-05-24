@@ -5,7 +5,7 @@ header.main {
 
     .cover {
         display: none;
-        background-color: var(--background-1);
+        background-color: var(--bg-main-color);
         opacity: 0;
         // opacity: .6;
         transition: opacity .1s ease;
@@ -33,7 +33,7 @@ header.main {
             cursor: pointer;
             border: none;
             background: transparent;
-            color: var(--white);
+            color: var(--text-color);
             letter-spacing: 16px;
             padding: 10px 30px;
             position: absolute;
@@ -48,7 +48,7 @@ header.main {
         position: fixed;
         z-index: 999;
 
-        background-color: var(--white);
+        background-color: var(--text-color);
         
         width: 300px;
         height: 100vh;
@@ -70,7 +70,7 @@ header.main {
             font-size: 20px;
             border: none;
             background: var(--background-grey);
-            color: var(--white);
+            color: var(--text-color);
             overflow: hidden;
             &:focus, &:hover {
                 width: unset;
@@ -84,23 +84,23 @@ header.main {
             justify-content: center;
             align-items: center;
             border-radius: 0.5rem;
-            background: var(--background-1);
+            background: var(--bg-main-color);
             margin-top: 1rem;
             margin-bottom: 1.5rem;
             padding: 0.5rem;
-            color: var(--white);
+            color: var(--text-color);
             gap: 0.5rem;
             font-weight: 500;
             transition: color .1s ease-in-out;
             &:hover {
-                color: var(--red);
+                color: var(--accent-color);
             }
         }
 
         .language-dropdown {
-            color: var(--background-1);
+            color: var(--bg-main-color);
             margin-top: 4rem;
-            border: solid 1px var(--background-2);
+            border: solid 1px var(--bg-2-color);
             border-radius: 6px;
             padding: .5rem 1rem;
 
@@ -112,11 +112,11 @@ header.main {
                     max-width: 30px;
                 }
                 font-size: 18px;
-                color: var(--background-1);
+                color: var(--bg-main-color);
                 cursor: pointer;
                 transition: color .1s ease;
                 &:hover {
-                    color: var(--red);
+                    color: var(--accent-color);
                 }
             }
 
@@ -128,7 +128,7 @@ header.main {
 
                 li {
                     a {
-                        color: var(--background-1);
+                        color: var(--bg-main-color);
                         width: 100%;
 
                         display: flex;
@@ -141,7 +141,7 @@ header.main {
                         }
                         transition: color .1s ease;
                         &:hover {
-                            color: var(--red);
+                            color: var(--accent-color);
                         }
                     }
                 }
@@ -155,12 +155,12 @@ header.main {
             gap: 25px;
             li > a {
                 font-size: 21px;
-                color: var(--background-1);
+                color: var(--bg-main-color);
                 letter-spacing: 1.5px;
                 transition: color .1s ease;
 
                 &:hover {
-                    color: var(--red);
+                    color: var(--accent-color);
                 }
             }
         }
@@ -170,7 +170,7 @@ header.main {
         .float {
             left: 300px;
             button {
-                color: var(--red);
+                color: var(--accent-color);
             }
         }
         .cover {
@@ -186,7 +186,7 @@ header.main {
     @media only screen and (max-width: 450px) {
         .float {
 
-            background: var(--background-1);
+            background: var(--bg-main-color);
             top: 0;
             left: 0;
             height: 50px;
@@ -205,7 +205,7 @@ header.main {
 
         .float {
             
-            background: var(--background-1);
+            background: var(--bg-main-color);
             top: 0;
             left: 0;
             height: 100px;
