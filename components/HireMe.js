@@ -11,7 +11,7 @@ export default function HireMe({ data }) {
             <div className="wrapper  max-w-3xl m-auto rounded-xl px-7 py-10
                 sm:p-10
                 md:p-16 md:border-2 md:border-black">
-                <h2 className="text-4xl text-center mb-3">Get In Touch</h2>
+                <h2 className="text-4xl text-center mb-3" id="getintouch">Get In Touch</h2>
                 <p className="text-center font-thin mb-8">If You want to get your business on another level, I am waiting for your message.</p>
                 <form action="https://api.web3forms.com/submit" method="POST">
 

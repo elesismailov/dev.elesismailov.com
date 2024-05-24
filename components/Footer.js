@@ -20,12 +20,11 @@ export default function Footer({ data }) {
                     </Link>
                 </div>
                 <h2>{data.footer_h2}</h2>
-                <nav className='mb-10'>
+                <nav className='mb-6'>
                     <ul>
-                        {data.footer_links.map((link, i) => {
-                            if (link.href == router.pathname) return
-                            return <li key={i}><Link href={link.href}>{link.text}</Link></li>
-                        })}
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/projects">Projects</Link></li>
+                        <li><Link href="/#getintouch">Get In Touch</Link></li>
                     </ul>
                     {/* <a className="main-link external" target="_blank" href={data.footer_main_link.href} dangerouslySetInnerHTML={{__html: data.footer_main_link.text }}></a> */}
                 </nav>
@@ -37,8 +36,8 @@ export default function Footer({ data }) {
                 </a>
 
                 <div className="attribution">
-                    <p className="attribution-1">{data.footer_attribution_1}</p>
-                    <p className="attribution-2">{data.footer_attribution_2}</p>
+                    <p className="attribution-1">Eles Ismailov</p>
+                    <p className="attribution-2">2023 - onward</p>
                 </div>
             </div>
         </footer>
