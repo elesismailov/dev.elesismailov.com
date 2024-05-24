@@ -1,3 +1,6 @@
+'use client';
+
+import Script from 'next/script';
 
 
 export default function HireMe({ data }) {
@@ -16,11 +19,12 @@ export default function HireMe({ data }) {
                 <form action="https://api.web3forms.com/submit" method="POST">
 
                     <input type="hidden" name="access_key" value="3b864da5-2c51-42e5-9fee-43f833ef11e1" />
+                    
                     <div className="wrapper max-w-96 m-auto flex flex-col justify-center items-center gap-y-4">
                         <input type="text" name="name" placeholder="John Smith" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-red-500" required />
                         <input type="email" name="email" placeholder="myemail@example.com" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-red-500" required />
                         <textarea name="message" placeholder="Hi! I want to learn more about this..." className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-red-500" />
-                        {/* <div class="h-captcha" data-captcha="true"></div> */}
+                        <div className="h-captcha" data-captcha="true"></div>
   
                         <button type="submit" className="w-full bg-red-500 hover:bg-red-600 text-white font-medium py-3 px-4 rounded-md focus:outline-none focus:ring focus:ring-red-500">
                             Elevate My Business
@@ -29,7 +33,7 @@ export default function HireMe({ data }) {
 
 
                 </form>
-                {/* <script src="https://web3forms.com/client/script.js" async defer></script> */}
+                <Script src="https://web3forms.com/client/script.js" async defer />
 
             </div>
 
