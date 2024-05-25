@@ -13,7 +13,7 @@ export default function ProjectsSection({data}) {
 
 function Project({p, key}) {
     return (
-    <li key={key} className="project ">
+    <li key={key} className="project shadow-lg ">
         <div className="preview " >
             <a href={p.link} target="_blank" className="" tabIndex="-1">
                 <img src={p.preview} alt={p.previewAltText} className="" width="448" height="250" />

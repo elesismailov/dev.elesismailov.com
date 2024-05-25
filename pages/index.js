@@ -104,7 +104,7 @@ const recent_projects = [
         ],
         "preview": "/previews/ink-agency-preview.jpeg",
         "previewAltText": "Ink. Agency Website preview",
-        "link": "http://ink-agency.vercel.app/",
+        "link": "http://ink-agency.com/",
         "tags": ["Next.js", "TailwindCSS", "Domain Set Up", "Contact Form", "Responsive"] 
     
     },

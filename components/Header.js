@@ -9,8 +9,8 @@ export default function Header({ data }) {
         <header className="main" id='main-header' tabIndex='-1'>
 
 
-            <div className="float">
-                <button onClick={handleOpen}>MENU</button>
+            <div onClick={handleOpen} className="float bg-black text-white p-6">
+                <button>MENU</button>
             </div>
 
             <div className="cover" onClick={handleClose}></div>
