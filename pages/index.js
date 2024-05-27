@@ -22,7 +22,7 @@ export default function Home() {
         return (
             <>
                 <Head>
-                    <title>Eles Ismailov Web Developer</title>
+                    <title>Eles Ismailov</title>
                     <meta name="description" lang="en" content="Eles Ismailov Web Developer" />
                 </Head>
 
