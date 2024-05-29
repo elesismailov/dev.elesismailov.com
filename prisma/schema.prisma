@@ -13,6 +13,7 @@ model User {
   name    String
   email   String    @unique
   posts Post[]
+  password String?
 }
 
 model Post {
