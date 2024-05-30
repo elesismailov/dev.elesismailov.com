@@ -17,7 +17,7 @@ export default function AdminPostInfo({ post }) {
     }
     return (<ProtectedLayer>
         <AdminHeader />
-        <div className="mt-5 flex items-center justify-center bg-gray-100">
+        <div className="mt-5 flex items-center justify-center">
             <div className="bg-white p-8 rounded shadow-md w-full max-w-5xl">
                 <header>
                     <nav><ul className="mb-6 flex gap-5 items-center">
