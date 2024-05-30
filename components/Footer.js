@@ -19,7 +19,6 @@ export default function Footer({ data }) {
                         </div>
                     </Link>
                 </div>
-                <h2>{data.footer_h2}</h2>
                 <nav className='mb-6'>
                     <ul>
                         <li><Link href="/">Home</Link></li>
