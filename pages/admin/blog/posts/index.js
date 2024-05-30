@@ -1,13 +1,14 @@
 import Header from '@/components/Header';
 import prisma from '@/lib/prisma';
 import ProtectedLayer from "@/components/ProtectedLayer";
+import AdminHeader from '@/components/AdminHeader';
 
 export default function AdminBlogPosts({ posts }) {  // Receive posts directly as props
 
     return (<ProtectedLayer>
-        {/* <Header /> */}
-        <div className='max-w-2xl m-auto'>
-            <h1>Admin Blog Posts</h1>
+        <AdminHeader />
+        <div className='max-w-2xl m-auto mt-5'>
+            <h1 className='text-xl mb-5 text-center'>Admin Blog Posts</h1>
             <ul>
                 {posts.map((post) => (
                     <li className='mb-10 bg-gray-200 rounded-md p-5 text-white'>

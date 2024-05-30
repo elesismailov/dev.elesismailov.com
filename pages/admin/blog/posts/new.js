@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import ProtectedLayer from "@/components/ProtectedLayer";
+import AdminHeader from '@/components/AdminHeader';
 // import markdownIt from 'markdown-it';
 
 
@@ -21,16 +22,13 @@ export default function AdminNewPost() {
                 body: JSON.stringify({ title, preview: previewLink, slug, content, unlisted }),
                 headers: { 'Content-Type': 'application/json', },
             })
-        // manually redirecting if the server redirected somewhere
-        if (response.redirected) {
-            window.location.href = response.url;
+        if (response.ok) {
+            window.location.href = "/admin/blog/posts/";
         }
     }
 
     return (<ProtectedLayer>
-        <header className='blog-admin-header'>
-            <h1>Blog Admin Page</h1>
-        </header>
+        <AdminHeader />
         <div className="blog-new-post">
             <div className="min-h-screen flex items-center justify-center bg-gray-100">
                 <div className="bg-white p-8 rounded shadow-md w-full max-w-5xl">

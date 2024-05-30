@@ -1,5 +1,6 @@
 /// POST INFORMATION FOR THE ADMIN
 
+import AdminHeader from "@/components/AdminHeader";
 import ProtectedLayer from "@/components/ProtectedLayer";
 import prisma from "@/lib/prisma";
 
@@ -10,13 +11,13 @@ export default function AdminPostInfo({ post }) {
         const response = await fetch('/api/admin/blog/posts/' + post.slug,
             { method: 'DELETE', headers: { 'Content-Type': 'application/json', }, })
 
-        if (response) {
-            window.location.href = "/admin/blog/posts";
+        if (response.ok) {
+            window.location.href = "/admin/blog/posts/";
         }
     }
     return (<ProtectedLayer>
-
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <AdminHeader />
+        <div className="mt-5 flex items-center justify-center bg-gray-100">
             <div className="bg-white p-8 rounded shadow-md w-full max-w-5xl">
                 <header>
                     <nav><ul className="mb-6 flex gap-5 items-center">

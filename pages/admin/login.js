@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 export default function LoginPage() {
     // const router = useRouter();
     const { data: session, status } = useSession();
+    if (status === 'authenticated') {
+        window.location.href = "/admin/blog/posts";
+    }
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -26,6 +29,9 @@ export default function LoginPage() {
             } else {
                 // Successful login, redirect to a protected page
                 console.log('Successful login, redirect to a protected page')
+                if (response.ok) {
+                    window.location.href = "/admin/blog/posts";
+                }
                 // router.push('/dashboard'); // Replace '/dashboard' with your actual protected route
             }
         } catch (err) {
@@ -39,15 +45,6 @@ export default function LoginPage() {
     //   }
 
     return (<>
-
-        <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-            <p>{session?.user?.name}</p>
-            <p>{session?.user?.email}</p>
-            {status === 'authenticated' &&
-                <button className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' onClick={signOut}>Sign Out</button>
-            }
-            <a className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' href="/admin/blog/posts/new">New Blog Post</a>
-        </div>
 
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="bg-white p-8 rounded shadow-md w-full max-w-md">

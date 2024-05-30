@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import ProtectedLayer from "@/components/ProtectedLayer";
 // import markdownIt from 'markdown-it';
 import prisma from "@/lib/prisma";
+import AdminHeader from '@/components/AdminHeader';
 
 
 export default function AdminEditPost({ post }) {
@@ -22,6 +23,9 @@ export default function AdminEditPost({ post }) {
                 body: JSON.stringify({ title, preview: previewLink, slug, content, unlisted }),
                 headers: { 'Content-Type': 'application/json', },
             })
+        if (response.ok) {
+            window.location.href = "/admin/blog/posts/" + slug;
+        }
         // manually redirecting if the server redirected somewhere
         // if (response.redirected) {
         //     window.location.href = response.url;
@@ -29,11 +33,9 @@ export default function AdminEditPost({ post }) {
     }
 
     return (<ProtectedLayer>
-        <header className='blog-admin-header'>
-            <h1>Blog Admin Page</h1>
-        </header>
+        <AdminHeader />
         <div className="">
-            <div className="min-h-screen flex items-center justify-center bg-gray-100">
+            <div className="mt-5 flex items-center justify-center bg-gray-100">
                 <div className="bg-white p-8 rounded shadow-md w-full max-w-5xl">
                     <h1 className="text-2xl font-semibold mb-4">Edit Blog Post</h1>
                     <form onSubmit={handleSubmit}>
