@@ -15,6 +15,7 @@ export default function AdminEditPost({ post }) {
 
     async function handleSubmit(event) {
         event.preventDefault()
+        console.log(unlisted)
         const response = await fetch('/api/admin/blog/posts/' + post.slug,
             {
                 method: 'PUT',
@@ -38,19 +39,19 @@ export default function AdminEditPost({ post }) {
                     <form onSubmit={handleSubmit}>
                         <label className='mb-5 block'>
                             <p><b>Title:</b></p>
-                            <input className="w-full p-2 border rounded" value={title} onChange={(e) => setTitle(e.target.value)} name="title" placeholder='Valuable Idea' required />
+                            <input className="w-full p-2 border rounded" value={title} onChange={(e) => setTitle(e.target.value)} name="title" placeholder='Valuable Idea' type='text' required />
                         </label>
                         <label className='mb-5 block'>
                             <p><b>Preview Link:</b></p>
-                            <input className="w-full p-2 border rounded" value={previewLink} onChange={(e) => setPreviewLink(e.target.value)} name="preview-link" placeholder='http://image-assets.com/example.jpg' />
+                            <input className="w-full p-2 border rounded" value={previewLink} onChange={(e) => setPreviewLink(e.target.value)} name="preview-link" type='text' placeholder='http://image-assets.com/example.jpg' />
                         </label>
                         <label className='mb-5 block'>
                             <p><b>Slug:</b></p>
-                            <input className="w-full p-2 border rounded" value={slug} onChange={(e) => setSlug(e.target.value)} name="slug" />
+                            <input className="w-full p-2 border rounded" value={slug} onChange={(e) => setSlug(e.target.value)} name="slug" type='text' />
                         </label>
                         <label className='flex items-center mb-5 gap-5'>
                             <p><b>Unlisted:</b></p>
-                            <input className="w-6 h-6 border rounded" value={unlisted} onChange={(e) => setUnlisted(e.target.value)} type='checkbox' value={unlisted} name="preview-link" />
+                            <input className="w-6 h-6 border rounded" value={unlisted} onChange={(e) => {setUnlisted(e.target.checked)}} type='checkbox' name="unlisted" />
                         </label>
 
                         <label className='content-label mb-5 block'>
@@ -69,9 +70,6 @@ export default function AdminEditPost({ post }) {
 
 export async function getStaticPaths() {
     const posts = await prisma.post.findMany({
-        where: {
-            unlisted: false, // Only include published posts
-        },
         select: {
             slug: true
         }

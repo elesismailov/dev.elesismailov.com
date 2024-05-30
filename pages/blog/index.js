@@ -13,6 +13,7 @@ export default function BlogPage({ posts }) {  // Receive posts directly as prop
                 {posts.map((post) => (
                     <li className='mb-10 bg-black rounded-md p-5 text-white'>
                         <h2><a href={"/blog/posts/" + post.slug}>{post.title}</a></h2>
+                        <p>{new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" })}</p>
                     </li>
                     //   <BlogPostCard key={post.id} post={post} />
                 ))}
@@ -27,7 +28,7 @@ export async function getStaticProps() {
             unlisted: false,
             // publishedAt: null,
         },
-        orderBy: { publishedAt: 'desc' },
+        orderBy: { createdAt: 'desc' },
         include: { author: true },
     });
 

@@ -24,7 +24,12 @@ export default function AdminPostInfo({ post }) {
                         <li><button onClick={handleDelete} className="text-md block bg-red-500 text-white p-2 rounded hover:bg-red-600 w-full">Delete This Post</button></li>
                     </ul></nav>
                 </header>
-                <h1 className="text-2xl font-semibold mb-4">Title: {post.title}</h1>
+                <h1 className="text-2xl font-semibold">Title: {post.title}</h1>
+                {post.unlisted ?
+                    <p className='text-red-400'>Unlisted</p>
+                    : <p className='text-green-400'>Public</p>
+                }
+                <p>{new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" })}</p>
                 <p>{post.content}</p>
             </div>
         </div>
@@ -33,7 +38,7 @@ export default function AdminPostInfo({ post }) {
 
 export async function getStaticPaths() {
     const posts = await prisma.post.findMany({
-        where: { unlisted: false },
+        where: {},
         select: { slug: true }
     });
     const paths = posts.map(post => ({

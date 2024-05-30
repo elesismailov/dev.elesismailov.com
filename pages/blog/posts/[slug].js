@@ -8,7 +8,8 @@ export default function Post({ post }) {
   return (
     <article>
       <h1>{post.title}</h1>
-      <p>By {post.author.name} on {new Date(post.publishedAt).toLocaleDateString()}</p>
+      <p>{new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" })}</p>
+      <p>By {post.author.name}</p>
       <div className='bg-gray-200'>{post.content}</div> {/* Display the plain text content for now */}
     </article>
   );

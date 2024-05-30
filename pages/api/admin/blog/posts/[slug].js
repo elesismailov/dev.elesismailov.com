@@ -11,6 +11,7 @@ export default async function handler(req, res) {
     if (req.method === "PUT") { /// EDIT THE POST
         try {
             const { title, preview, slug, content, unlisted } = req.body;
+            console.log(unlisted)
 
             await prisma.post.update({
                 where: { slug: req.query.slug },
