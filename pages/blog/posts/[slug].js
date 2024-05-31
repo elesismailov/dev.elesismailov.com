@@ -25,21 +25,21 @@ export default function Post({ post }) {
         <Footer />
     </>);
 }
-// Get all possible paths (slugs) for pre-rendering
-export async function getStaticPaths() {
-    const posts = await prisma.post.findMany({
-        select: {
-            slug: true
-        }
-    });
-    const paths = posts.map(post => ({
-        params: { slug: post.slug },
-    }));
-    return {
-        paths,
-        fallback: false,
-    };
-}
+// // Get all possible paths (slugs) for pre-rendering
+// export async function getStaticPaths() {
+//     const posts = await prisma.post.findMany({
+//         select: {
+//             slug: true
+//         }
+//     });
+//     const paths = posts.map(post => ({
+//         params: { slug: post.slug },
+//     }));
+//     return {
+//         paths,
+//         fallback: false,
+//     };
+// }
 
 // Fetch data for each page
 export async function getStaticProps({ params }) {
@@ -48,16 +48,10 @@ export async function getStaticProps({ params }) {
         include: { author: true },
     });
 
-    if (!post) {
-        return {
-            notFound: true,
-        };
-    }
+    if (!post) { return { notFound: true, }; }
 
     return {
-        props: {
-            post: JSON.parse(JSON.stringify(post)),
-        },
+        props: { post: JSON.parse(JSON.stringify(post)) },
         revalidate: 10,
     };
 }

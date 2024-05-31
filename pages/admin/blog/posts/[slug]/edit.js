@@ -70,20 +70,20 @@ export default function AdminEditPost({ post }) {
     </ProtectedLayer>)
 }
 
-export async function getStaticPaths() {
-    const posts = await prisma.post.findMany({
-        select: {
-            slug: true
-        }
-    });
-    const paths = posts.map(post => ({
-        params: { slug: post.slug },
-    }));
-    return {
-        paths,
-        fallback: false,
-    };
-}
+// export async function getStaticPaths() {
+//     const posts = await prisma.post.findMany({
+//         select: {
+//             slug: true
+//         }
+//     });
+//     const paths = posts.map(post => ({
+//         params: { slug: post.slug },
+//     }));
+//     return {
+//         paths,
+//         fallback: false,
+//     };
+// }
 
 // Fetch data for each page
 export async function getStaticProps({ params }) {
@@ -92,18 +92,12 @@ export async function getStaticProps({ params }) {
         include: { author: true },
     });
 
-    if (!post) {
-        return {
-            notFound: true,
-        };
-    }
+    if (!post) { return { notFound: true } }
 
     console.log(post.createdAt.toString())
 
     return {
-        props: {
-            post: JSON.parse(JSON.stringify(post)),
-        },
+        props: { post: JSON.parse(JSON.stringify(post)) },
         revalidate: 60,
     };
 }
