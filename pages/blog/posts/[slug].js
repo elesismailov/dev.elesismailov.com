@@ -10,6 +10,9 @@ export default function Post({ post }) {
     const formattedDate = new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" });
     return (<>
         <Header />
+        <Head>
+            <title>{post.title}</title>
+        </Head>
         <article >
             <div className="mt-5 flex items-center justify-center">
                 <div className="bg-white min-h-screen p-8 w-full max-w-5xl">
