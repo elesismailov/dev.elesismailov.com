@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation' // new way to not found if using app 
 
 export default function SignUpPage() {
 
-    // return <></>;
+    return <></>;
 
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');

@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import bcrypt from "bcrypt";
 
 export default async function handler(req, res) {
+  return res.status(500).json({ message: "Error creating user" });
   if (req.method === "POST") {
     try {
       const { email, name, password } = req.body;

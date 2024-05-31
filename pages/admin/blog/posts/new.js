@@ -53,7 +53,7 @@ export default function AdminNewPost() {
 
                         <label className='content-label mb-5 block'>
                             <p><b>Content:</b></p>
-                            <textarea className="w-full p-2 border rounded" onChange={(e) => setContent(e.target.value)} name="content" placeholder='This great idea will change your life...' id="content" rows="2" required></textarea>
+                            <textarea className="w-full p-2 h-64 border rounded" onChange={(e) => setContent(e.target.value)} name="content" placeholder='This great idea will change your life...' id="content" rows="2" required></textarea>
                         </label>
                         <button type="submit" className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-full">
                             Create New Post
