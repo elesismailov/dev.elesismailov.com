@@ -28,21 +28,6 @@ export default function Post({ post }) {
         <Footer />
     </>);
 }
-// // Get all possible paths (slugs) for pre-rendering
-// export async function getStaticPaths() {
-//     const posts = await prisma.post.findMany({
-//         select: {
-//             slug: true
-//         }
-//     });
-//     const paths = posts.map(post => ({
-//         params: { slug: post.slug },
-//     }));
-//     return {
-//         paths,
-//         fallback: false,
-//     };
-// }
 
 // Fetch data for each page
 export async function getServerSideProps({ params }) {
