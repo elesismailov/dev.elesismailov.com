@@ -52,6 +52,6 @@ export async function getServerSideProps({ params }) {
 
     return {
         props: { post: JSON.parse(JSON.stringify(post)) },
-        revalidate: 10,
+        // revalidate: 10,
     };
 }
