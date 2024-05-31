@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation' // new way to not found if using app 
 import prisma from '@/lib/prisma';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import Head from 'next/head';
 
 export default function Post({ post }) {
     if (!post) notFound()

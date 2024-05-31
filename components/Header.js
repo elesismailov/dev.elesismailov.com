@@ -9,9 +9,9 @@ export default function Header({ data }) {
         <header className="main" id='main-header' tabIndex='-1'>
 
 
-            <div onClick={handleOpen} className="float bg-black text-white p-6">
-                <button>MENU</button>
-            </div>
+            <button onClick={handleOpen} className="max-h-7 w-52 h-7 -rotate-90 flex justify-center items-center fixed top-20 -left-20 rounded-bl-md shadow-sm shadow-white z-50 bg-black text text-white p-6">
+                MENU
+            </button>
 
             <div className="cover" onClick={handleClose}></div>
 

@@ -1,6 +1,5 @@
 
 header.main {
-    background: grey;
 
 
     .cover {
@@ -16,29 +15,32 @@ header.main {
         inset: 0;
     }
 
-    .float {
-        position: fixed;
-        z-index: 999;
-        width: 30px;
-
-        left: 0;                 
-        top: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        transition: left .2s ease;
-        button {
-            transform: rotate(-90deg);
-            cursor: pointer;
-            border: none;
-            letter-spacing: 16px;
-            padding: 10px 30px;
-            position: absolute;
-            left: -60px;
+    // .float {
+    //     position: fixed;
+    //     z-index: 999;
+    //     width: 30px;
+    //         top: 0;
+    //         left: 0;
+    //         height: 50px;
+    //         width: 100%;
+    //         justify-content: center;
+    //         align-items: center;
+    //         button {
+    //             transform: none;
+    //             margin-right: -16px;
+    //             position: unset;
+    //         }
+    //     button {
+    //         transform: rotate(-90deg);
+    //         cursor: pointer;
+    //         border: none;
+    //         letter-spacing: 16px;
+    //         padding: 10px 30px;
+    //         position: absolute;
+    //         left: -60px;
             
-        }
-    }
+    //     }
+    // }
 
     .wrapper {
         // display: none;
@@ -165,12 +167,12 @@ header.main {
     }
 
     &.opened {
-        .float {
-            left: 300px;
-            button {
-                color: var(--accent-color);
-            }
-        }
+        // .float {
+        //     left: 300px;
+        //     button {
+        //         color: var(--accent-color);
+        //     }
+        // }
         .cover {
             display: block;
             opacity: .6;
@@ -182,39 +184,39 @@ header.main {
     }
 
     @media only screen and (max-width: 450px) {
-        .float {
+        // .float {
 
-            top: 0;
-            left: 0;
-            height: 50px;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            button {
-                transform: none;
-                margin-right: -16px;
-                position: unset;
-            }
-        }
+        //     top: 0;
+        //     left: 0;
+        //     height: 50px;
+        //     width: 100%;
+        //     justify-content: center;
+        //     align-items: center;
+        //     button {
+        //         transform: none;
+        //         margin-right: -16px;
+        //         position: unset;
+        //     }
+        // }
     }
 
     @media only screen and (min-width: 1536px) {
 
-        .float {
+        // .float {
             
-            top: 0;
-            left: 0;
-            height: 100px;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            button {
-                transform: none;
-                margin-right: -16px;
-                position: unset;
+        //     top: 0;
+        //     left: 0;
+        //     height: 100px;
+        //     width: 100%;
+        //     justify-content: center;
+        //     align-items: center;
+        //     button {
+        //         transform: none;
+        //         margin-right: -16px;
+        //         position: unset;
 
-            }
-        }
+        //     }
+        // }
         
         .wrapper {
             
