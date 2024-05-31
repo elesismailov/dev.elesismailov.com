@@ -86,7 +86,7 @@ export default function AdminEditPost({ post }) {
 // }
 
 // Fetch data for each page
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     const post = await prisma.post.findUnique({
         where: { slug: params.slug },
         include: { author: true },
