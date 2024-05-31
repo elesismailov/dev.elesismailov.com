@@ -12,13 +12,13 @@ export default function Footer({ data }) {
         <footer className="main-footer">
 
             <div className="wrapper">
-                <div className="logo">
+                {/* <div className="logo">
                     <Link href="/" locale={router.locale}>
                         <div className='img-wrapper'>
                             <img src="https://elesismailov.com/logo.png" alt="LS Letters Log" />
                         </div>
                     </Link>
-                </div>
+                </div> */}
                 <nav className='mb-6'>
                     <ul>
                         <li><Link href="/">Home</Link></li>

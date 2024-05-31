@@ -13,7 +13,7 @@ export default function BlogPage({ posts }) {  // Receive posts directly as prop
             <ul>
                 {posts.map((post) => {
                     const formattedDate = new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" });
-                    return <li className='mb-10 bg-black rounded-md p-5 text-white'>
+                    return <li key={post.id} className='mb-10 bg-black rounded-md p-5 text-white'>
                                 <h2 className='text-2xl mb-3 hover:text-red-500' ><a href={"/blog/posts/" + post.slug}>{post.title}</a></h2>
                                 <time className='italic text-gray-400' dateTime={formattedDate}>{formattedDate}</time>
                             </li>

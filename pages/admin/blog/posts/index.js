@@ -11,7 +11,7 @@ export default function AdminBlogPosts({ posts }) {  // Receive posts directly a
             <h1 className='text-xl mb-5 text-center'>Admin Blog Posts</h1>
             <ul>
                 {posts.map((post) => (
-                    <li className='mb-10 bg-gray-200 rounded-md p-5 text-white'>
+                    <li key={post.id} className='mb-10 bg-gray-200 rounded-md p-5 text-white'>
                         <h2 className='text-xl text-blue-400'><a href={"/admin/blog/posts/" + post.slug}>{post.title}</a></h2>
                         {post.unlisted ?
                             <p className='text-red-400'>Unlisted</p>
