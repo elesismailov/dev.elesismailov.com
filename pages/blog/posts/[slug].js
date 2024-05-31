@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
 export default function Post({ post }) {
-    console.log(6, post)
     if (!post) notFound()
 
     const formattedDate = new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" });
@@ -29,9 +28,6 @@ export default function Post({ post }) {
 // Get all possible paths (slugs) for pre-rendering
 export async function getStaticPaths() {
     const posts = await prisma.post.findMany({
-        where: {
-            unlisted: false, // Only include published posts
-        },
         select: {
             slug: true
         }
@@ -58,12 +54,10 @@ export async function getStaticProps({ params }) {
         };
     }
 
-    console.log(post.createdAt.toString())
-
     return {
         props: {
             post: JSON.parse(JSON.stringify(post)),
         },
-        revalidate: 60,
+        revalidate: 10,
     };
 }

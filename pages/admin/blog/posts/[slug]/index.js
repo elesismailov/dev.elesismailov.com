@@ -39,7 +39,6 @@ export default function AdminPostInfo({ post }) {
 
 export async function getStaticPaths() {
     const posts = await prisma.post.findMany({
-        where: {},
         select: { slug: true }
     });
     const paths = posts.map(post => ({
@@ -60,8 +59,6 @@ export async function getStaticProps({ params }) {
             notFound: true,
         };
     }
-
-    console.log(post.createdAt.toString())
 
     return {
         props: {
