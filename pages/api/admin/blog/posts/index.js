@@ -14,8 +14,18 @@ export default async function handler(req, res) {
                 const user = session?.user;
 
                 await prisma.post.create({
-                    data: { title, preview, slug, content, unlisted, authorId: user?.id,
-                    author: { connect: { id: user?.id } } }
+                    data: {
+                        title,
+                        preview,
+                        slug,
+                        content,
+                        unlisted,
+                        author: {
+                            connect: {
+                                id: user?.id
+                            }
+                        },
+                    }
                 });
 
                 return res.status(201).json({ message: "Post created successfully" });
