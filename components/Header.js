@@ -28,6 +28,7 @@ export default function Header({ data }) {
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/projects">Projects</Link></li>
                         <li><Link href="/#getintouch">Get In Touch</Link></li>
+                        <li><Link href="/blog">Blog</Link></li>
                     </ul>
                 </nav>
                 <a href='http://github.com/elesismailov' target="_blank" aria-label="Github Repository" className="github-link">

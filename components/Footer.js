@@ -24,6 +24,7 @@ export default function Footer({ data }) {
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/projects">Projects</Link></li>
                         <li><Link href="/#getintouch">Get In Touch</Link></li>
+                        <li><Link href="/blog">Blog</Link></li>
                     </ul>
                     {/* <a className="main-link external" target="_blank" href={data.footer_main_link.href} dangerouslySetInnerHTML={{__html: data.footer_main_link.text }}></a> */}
                 </nav>
