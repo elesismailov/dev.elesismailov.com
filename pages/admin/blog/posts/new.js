@@ -48,7 +48,7 @@ export default function AdminNewPost() {
                         </label>
                         <label className='flex items-center mb-5 gap-5'>
                             <p><b>Unlisted:</b></p>
-                            <input className="w-6 h-6 border rounded" onChange={(e) => setUnlisted(e.target.value)} type='checkbox' value={unlisted} name="preview-link" />
+                            <input className="w-6 h-6 border rounded" value={unlisted} onChange={(e) => {setUnlisted(e.target.checked)}} type='checkbox' name="unlisted" />
                         </label>
 
                         <label className='content-label mb-5 block'>

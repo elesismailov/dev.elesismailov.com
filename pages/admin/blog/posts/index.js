@@ -39,6 +39,6 @@ export async function getStaticProps() {
 
     return {
         props: { posts: JSON.parse(JSON.stringify(posts)) },   // Pass posts directly, Prisma returns plain objects
-        revalidate: 10,
+        revalidate: 1,
     };
 }
