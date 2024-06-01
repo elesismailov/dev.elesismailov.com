@@ -4,11 +4,15 @@ import prisma from '@/lib/prisma';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Head from 'next/head';
+import markdownIt from 'markdown-it';
 
 export default function Post({ post }) {
     if (!post) notFound()
 
+    const md = markdownIt({ breaks: true, linkify: true });
+    const htmlContent = md.render(post.content || '(Nothing here...)');
     const formattedDate = new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" });
+
     return (<>
         <Header />
         <Head>
@@ -22,7 +26,7 @@ export default function Post({ post }) {
                         <p className='mb-4 '>By {post.author.name}</p>
                     </div>
                     <h1 className='text-4xl mb-3'>{post.title}</h1>
-                    <div className=''>{post.content}</div>
+                    <div className="post-wrapper list-inside" dangerouslySetInnerHTML={{ __html: (htmlContent) }} ></div>
                 </div>
             </div>
         </article>

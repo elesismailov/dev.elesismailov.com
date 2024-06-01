@@ -74,3 +74,26 @@ a {
 ul, ol {
   list-style: none;
 }
+
+.post-wrapper {
+    line-height: 1.6;
+    list-style: unset;
+
+    code, pre {
+      overflow-x: scroll;
+    }
+    > ul, ol {
+      padding-left: 25px;
+      margin-bottom: 25px;
+      ul, ol {
+        padding-left: 25px;
+      }
+    }
+    p {
+      margin-bottom: 15px;
+      word-wrap: break-word;
+    }
+    img {
+      width: 100%;
+    }
+}

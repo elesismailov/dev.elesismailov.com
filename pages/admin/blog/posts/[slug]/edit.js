@@ -26,10 +26,6 @@ export default function AdminEditPost({ post }) {
         if (response.ok) {
             window.location.href = "/admin/blog/posts/" + slug;
         }
-        // manually redirecting if the server redirected somewhere
-        // if (response.redirected) {
-        //     window.location.href = response.url;
-        // }
     }
 
     return (<ProtectedLayer>
