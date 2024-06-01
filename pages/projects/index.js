@@ -21,7 +21,7 @@ export default function ProjectsIndex() {
         </Head>
         <Header data={data} />
 
-        <main className='projects-page'>
+        <main className='projects-page  pt-4 md:pt-0'>
             
             <h1>{ data.h1 }</h1>
             <div className="wrapper">

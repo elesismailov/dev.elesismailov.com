@@ -30,12 +30,13 @@ export default function Home({ posts }) {
 
                 <Header data={data} />
 
-                <main lang={locale} className='font-["Ubuntu"]'>
+                <main lang={locale} className='font-["Ubuntu"] pt-10 md:pt-0'>
 
                     <section className="hero-section">
                         <div className="wrapper wrapper wrapper max-w-screen-2xl mx-auto h-[95vh] flex items-center pl-7
                         sm:pl-20
-                        md:pl-56">
+                        md:pl-36
+                        lg:pl-56">
                             <h1 className="text-7xl text-black font-[500] leading-snug
                                 sm:text-8xl
                                 md:text-9xl">
@@ -83,10 +84,8 @@ export default function Home({ posts }) {
 
                     <HireMe data={data.hire_me} />
 
-                    <section className="blog-section
-                        sm:py-8 sm:px-24
-                        md:py-10 md:px-28
-                        lg:px-36 mx-auto my-10">
+                    <section className="blog-section max-w-screen-2xl
+                         px-7 mx-auto my-10">
                         <h1 className='text-4xl text-center mb-6'>Dive into my thoughts</h1>
                         <p className="text-center font-thin mb-8">Yep, this is my blog. There is supposed to be to be something interesting...</p>
                         <ul className='posts-list  mb-12 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] justify-items-center gap-y-10 gap-x-5'>
@@ -94,7 +93,7 @@ export default function Home({ posts }) {
                                 return <BlogPostCard post={post} />
                             })}
                         </ul>
-                        <Link href="/projects" locale={locale} className=" text-red-500 border-red-500 border-2 p-3.5 px-7 rounded-lg font-medium block max-w-64 mx-auto text-center hover:text-white hover:bg-red-500">See All Blog Posts</Link>
+                        <Link href="/blog" locale={locale} className=" text-red-500 border-red-500 border-2 p-3.5 px-7 rounded-lg font-medium block max-w-64 mx-auto text-center hover:text-white hover:bg-red-500">See All Blog Posts</Link>
                     </section>
 
                 </main>

@@ -9,7 +9,9 @@ export default function Header({ data }) {
         <header className="main" id='main-header' tabIndex='-1'>
 
 
-            <button onClick={handleOpen} className="max-h-7 w-52 h-7 -rotate-90 flex justify-center items-center fixed top-20 -left-20 rounded-bl-md shadow-sm shadow-white z-50 bg-black text text-white p-6">
+            <button onClick={handleOpen} className=" flex justify-center items-center fixed shadow-sm shadow-white z-50 bg-black text text-white px-6 py-4
+                max-w-screen w-full h-unset rotate-0 top-0 left-0 
+                md:max-h-7 md:w-52 md:rounded-bl-md md:h-7 md:-rotate-90 md:top-20 md:-left-20 md:py-6">
                 MENU
             </button>
 

@@ -19,13 +19,13 @@ export default function Post({ post }) {
             <title>{post.title}</title>
         </Head>
         <article >
-            <div className="mt-5 flex items-center justify-center">
+            <div className="mt-14 flex items-center justify-center">
                 <div className="bg-white min-h-screen p-8 w-full max-w-5xl">
                     <div className="flex gap-5">
                         <time className='italic text-gray-600' dateTime={formattedDate}>{formattedDate}</time>
                         <p className='mb-4 '>By {post.author.name}</p>
                     </div>
-                    <h1 className='text-4xl mb-3'>{post.title}</h1>
+                    <h1 className='text-4xl font-bold mb-3'>{post.title}</h1>
                     <div className="post-wrapper list-inside" dangerouslySetInnerHTML={{ __html: (htmlContent) }} ></div>
                 </div>
             </div>

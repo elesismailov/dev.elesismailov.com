@@ -14,8 +14,9 @@ export default function BlogPage({ posts }) {  // Receive posts directly as prop
         <Head>
             <title>My Blog</title>
         </Head>
-        <div className='               
-            sm:py-8 sm:px-24
+        <div className='
+            py-10            
+            sm:py-16 sm:px-24
             md:py-10 md:px-28
             lg:px-36 min-h-screen mx-auto my-10'>
             <h1 className='text-4xl text-center mb-10'>My Blog</h1>
