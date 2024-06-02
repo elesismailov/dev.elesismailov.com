@@ -9,6 +9,7 @@ import NoLocale from '@/components/NoLocale';
 import HireMe from '@/components/HireMe';
 import BlogPostCard from '@/components/BlogPostCard';
 
+import prisma from '@/lib/prisma';
 
 import index_data from "./index_data.json";
 import ProjectsSection from '@/components/ProjectsSection';
