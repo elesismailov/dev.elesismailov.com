@@ -90,7 +90,7 @@ export default function Home({ posts }) {
                         <p className="text-center font-thin mb-8">Yep, this is my blog. There is supposed to be to be something interesting...</p>
                         <ul className='posts-list  mb-12 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] justify-items-center gap-y-10 gap-x-5'>
                             {posts.map((post) => {
-                                return <BlogPostCard post={post} />
+                                return <BlogPostCard key={post?.id} post={post} />
                             })}
                         </ul>
                         <Link href="/blog" locale={locale} className=" text-red-500 border-red-500 border-2 p-3.5 px-7 rounded-lg font-medium block max-w-64 mx-auto text-center hover:text-white hover:bg-red-500">See All Blog Posts</Link>

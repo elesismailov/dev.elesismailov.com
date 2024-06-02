@@ -22,7 +22,7 @@ export default function BlogPage({ posts }) {  // Receive posts directly as prop
             <h1 className='text-4xl text-center mb-10'>My Blog</h1>
             <ul className='posts-list grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] justify-items-center gap-y-10 gap-x-5'>
                 {posts.map((post) => {
-                    return <BlogPostCard post={post} />
+                    return <BlogPostCard key={post?.id} post={post} />
                 })}
             </ul>
         </div>
