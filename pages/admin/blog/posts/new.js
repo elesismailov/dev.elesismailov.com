@@ -14,18 +14,27 @@ export default function AdminNewPost() {
     const [previewLink, setPreviewLink] = useState(null);
     const [unlisted, setUnlisted] = useState(false);
 
-    async function handleSubmit(event) {
-        event.preventDefault()
-        const response = await fetch('/api/admin/blog/posts',
-            {
-                method: 'POST',
-                body: JSON.stringify({ title, preview: previewLink, slug, content, unlisted }),
-                headers: { 'Content-Type': 'application/json', },
-            })
+    const handleSubmit = async event => {
+        event.preventDefault();
+
+        const postData = {
+            title,
+            preview: previewLink,
+            slug,
+            content,
+            unlisted
+        };
+
+        const response = await fetch('/api/admin/blog/posts', {
+            method: 'POST',
+            body: JSON.stringify(postData),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
         if (response.ok) {
-            window.location.href = "/admin/blog/posts/";
+            window.location.href = '/admin/blog/posts/';
         }
-    }
+    };
 
     return (<ProtectedLayer>
         <AdminHeader />
@@ -48,7 +57,7 @@ export default function AdminNewPost() {
                         </label>
                         <label className='flex items-center mb-5 gap-5'>
                             <p><b>Unlisted:</b></p>
-                            <input className="w-6 h-6 border rounded" value={unlisted} onChange={(e) => {setUnlisted(e.target.checked)}} type='checkbox' name="unlisted" />
+                            <input className="w-6 h-6 border rounded" value={unlisted} onChange={(e) => { setUnlisted(e.target.checked) }} type='checkbox' name="unlisted" />
                         </label>
 
                         <label className='content-label mb-5 block'>
@@ -59,9 +68,75 @@ export default function AdminNewPost() {
                             Create New Post
                         </button>
                     </form>
+
+                    <ImageUploadForm />
                 </div>
             </div>
         </div>
     </ProtectedLayer>)
 }
 
+const ImageUploadForm = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [isUploading, setIsUploading] = useState(false);
+    const [uploadProgress, setUploadProgress] = useState(0);
+    const [uploadError, setUploadError] = useState(null);
+    const [imageUrl, setImageUrl] = useState(null);
+
+    const handleImageChange = (event) => {
+        setSelectedImage(event.target.files[0]);
+    };
+
+    const handleUpload = async () => {
+        if (!selectedImage) return;
+
+        const fileExtension = selectedImage.name.split('.').pop(); // Get file extension
+
+        setIsUploading(true);
+        setUploadError(null);
+
+        try {
+            const response = await fetch('/api/handle/blog-files', {
+                method: 'POST',
+                body: selectedImage, // Send the file directly as the body
+                headers: {
+                    'Content-Type': `image/${fileExtension}`, // Explicitly set the correct Content-Type
+                  },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setImageUrl(data.imageUrl);
+            } else {
+                throw new Error('Image upload failed');
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+            setUploadError(error.message || 'Upload failed');
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
+    return (
+        <div>
+            <input type="file" accept="image/*" onChange={handleImageChange} />
+            {selectedImage && (
+                <div>
+                    <p>Selected Image: {selectedImage.name}</p>
+                    {isUploading && (
+                        <div>
+                            <progress value={uploadProgress} max="100" />
+                            <p>Uploading: {uploadProgress}%</p>
+                        </div>
+                    )}
+                    {!isUploading && (
+                        <button onClick={handleUpload}>Upload Image</button>
+                    )}
+                    {uploadError && <p style={{ color: 'red' }}>{uploadError}</p>}
+                    {imageUrl && <img src={imageUrl} alt="Uploaded image" style={{ maxWidth: '200px' }} />}
+                </div>
+            )}
+        </div>
+    );
+};

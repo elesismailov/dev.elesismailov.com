@@ -9,7 +9,7 @@ import markdownIt from 'markdown-it';
 export default function Post({ post }) {
     if (!post) notFound()
 
-    const md = markdownIt({ breaks: true, linkify: true });
+    const md = markdownIt({ breaks: true, html: true, linkify: true });
     const htmlContent = md.render(post.content || '(Nothing here...)');
     const formattedDate = new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" });
 
