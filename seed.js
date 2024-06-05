@@ -12,8 +12,14 @@ async function main() {
       email: "admin@localhost.com"
     },
   });
+  // const adminUser = {
+  //   id: 1,
+  //   role: 'ADMIN',
+  //   name: "Admin S",
+  //   email: "admin@localhost.com"
+  // }
 
-  console.log(`Created admin user with id: ${adminUser.id}`);
+  // console.log(`Created admin user with id: ${adminUser.id}`);
 
   // Create blog posts for the admin user
   await prisma.post.createMany({
@@ -28,7 +34,119 @@ async function main() {
       },
       {
         title: 'Top 10 Tips for Next.js Development',
-        slug: 'top-10-nextjs-tips',
+        slug: 'top-10-next12js-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-next412js-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-nex123tjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-n4321extjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top1234-10-nextjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-121340-nextjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-104321-nextjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-n4312extjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-nextjs-t2134ips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'to1234p-10-nextjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-ne2134xtjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-n2314231extjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 't2p-10-nextjs-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-next432js-tips',
+        content: 'Learn some useful tricks to enhance your Next.js projects.',
+        preview: 'Discover expert advice for Next.js development.',
+        metaTitle: 'Next.js Tips',
+        authorId: adminUser.id,
+      },
+      {
+        title: 'Top 10 Tips for Next.js Development',
+        slug: 'top-10-234tjs-tips',
         content: 'Learn some useful tricks to enhance your Next.js projects.',
         preview: 'Discover expert advice for Next.js development.',
         metaTitle: 'Next.js Tips',

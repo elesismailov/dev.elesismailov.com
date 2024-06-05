@@ -10,6 +10,8 @@ import Head from 'next/head';
 
 export default function BlogPage({ posts, totalPages, currentPage }) {  // Receive posts directly as props
 
+    const pagesArray = Array.from({ length: totalPages }, (_, i) => i + 1);
+
     return (<>
         <Header />
         <Head>
@@ -33,17 +35,14 @@ export default function BlogPage({ posts, totalPages, currentPage }) {  // Recei
                 <Link href={`/blog/${currentPage - 1}`} className={'rounded-md flex items-center justify-center bg-black text-white px-3 py-1 hover:opacity-80 ' + `${currentPage === 1 ? 'pointer-events-none opacity-50' : ''}`}>
                     Previous
                 </Link>
-
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <Link key={page} href={`/blog/${page}`}
-                        className={`rounded-md px-3 py-1 border inline-block ${page === currentPage
-                            ? 'bg-red-500 border-red-500 text-white'
-                            : 'bg-white border-gray-300'
-                            }`}
-                        >
-                        {page}
-                    </Link>
-                ))}
+                {pagesArray.map((page) => {
+                    return (<Link key={page} href={`/blog/${page}`}
+                                className={`rounded-md px-3 py-1 border inline-block ${page === currentPage
+                                    ? 'bg-red-500 border-red-500 text-white'
+                                    : 'bg-white border-gray-300'
+                                    }`}
+                            > {page} </Link>);
+                })}
 
                 <Link href={`/blog/${currentPage + 1}`} className={'rounded-md flex items-center justify-center bg-black text-white px-3 py-1 hover:opacity-80 ' + `${currentPage === totalPages ? 'pointer-events-none inline-block opacity-50' : 'inline-block'}`}>
                     Next
