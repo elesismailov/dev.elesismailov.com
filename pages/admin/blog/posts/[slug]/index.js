@@ -4,17 +4,45 @@ import AdminHeader from "@/components/AdminHeader";
 import ProtectedLayer from "@/components/ProtectedLayer";
 import prisma from "@/lib/prisma";
 
+import { useState } from 'react';
+import markdownIt from 'markdown-it';
+
 export default function AdminPostInfo({ post }) {
 
-    async function handleDelete(event) {
-        event.preventDefault()
-        const response = await fetch('/api/admin/blog/posts/' + post.slug,
-            { method: 'DELETE', headers: { 'Content-Type': 'application/json', }, })
+    const md = markdownIt({ breaks: true, html: true, linkify: true });
+    const htmlContent = md.render(post.content || '(Nothing here...)');
+    
+    const [showConfirmation, setShowConfirmation] = useState(false);
 
-        if (response.ok) {
-            window.location.href = "/admin/blog/posts/";
+    const handleDelete = async (event) => {
+        event.preventDefault()
+        if (window.confirm('Are you sure you want to delete this post?')) {
+            setShowConfirmation(true);
+            const response = await fetch('/api/admin/blog/posts/' + post.slug,
+                { method: 'DELETE', headers: { 'Content-Type': 'application/json', }, })
+
+            if (response.ok) {
+                setShowConfirmation(false);
+                window.location.href = "/admin/blog/posts/";
+            }
         }
     }
+    if (showConfirmation) {
+        return <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75 z-50">
+            <div className="bg-white p-4 rounded">
+                <p className="text-center">Deleting...</p>
+            </div>
+        </div>
+    }
+    // async function handleDelete(event) {
+    //     event.preventDefault()
+    //     const response = await fetch('/api/admin/blog/posts/' + post.slug,
+    //         { method: 'DELETE', headers: { 'Content-Type': 'application/json', }, })
+
+    //     if (response.ok) {
+    //         window.location.href = "/admin/blog/posts/";
+    //     }
+    // }
     return (<ProtectedLayer>
         <AdminHeader />
         <div className="mt-5 flex items-center justify-center">
@@ -30,8 +58,8 @@ export default function AdminPostInfo({ post }) {
                     <p className='text-red-400'>Unlisted</p>
                     : <p className='text-green-400'>Public</p>
                 }
-                <p>{new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" })}</p>
-                <p>{post.content}</p>
+                <p className="mb-4 text-gray-600">{new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" })}</p>
+                <div className="post-wrapper list-inside" dangerouslySetInnerHTML={{ __html: (htmlContent) }} ></div>
             </div>
         </div>
     </ProtectedLayer>);
