@@ -13,16 +13,18 @@ export default function SearchPage({ posts, q }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!searchQuery) {
+            return;
+        }
         window.location.href = `/blog/search?q=${searchQuery}`;
     };
-
 
     return (<>
         <Header />
         <div className='
             py-10 px-7       
-            sm:py-16 sm:px-20
-            md:py-10 md:px-24
+            sm:py-16 sm:px-16
+            md:py-10 md:px-20
             lg:px-32 min-h-screen mx-auto my-10'>
             <h1 className="text-3xl mb-4 text-center md:text-left">Search results</h1>
 
@@ -50,6 +52,7 @@ export default function SearchPage({ posts, q }) {
                     <BlogPostCard key={post.id} post={post} />
                 ))}
             </ul>
+            {!posts.length && <p className='text-center'>No posts found</p>}
         </div>
         <Footer />
     </>);

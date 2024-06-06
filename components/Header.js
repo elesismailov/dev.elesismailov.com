@@ -1,8 +1,18 @@
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 export default function Header({ data }) {
     const router = useRouter();
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!searchQuery) {
+            return;
+        }
+        window.location.href = `/blog/search?q=${searchQuery}`;
+    };
 
     return (
 
@@ -24,6 +34,25 @@ export default function Header({ data }) {
                         <path d="M3 35L34.5 3.5" stroke="#fff" strokeWidth="5" strokeLinecap="round" />
                     </svg>
                 </button>
+
+                <form onSubmit={handleSubmit}>
+                    <div className="flex items-center gap-3 mb-7 w-full border-b-[1px] border-gray-400 focus focus:border-b-2 py-1">
+                        <input
+                            className="w-full text-white bg-black text-md focus:outline-none "
+                            type="text"
+                            name="search"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Search..."
+                        />
+                        <button htmlFor="search" name="search" onClick={handleSubmit} className="">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </form>
 
                 <nav className='mb-10'>
                     <ul onClick={handleClose}>
