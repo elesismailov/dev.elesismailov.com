@@ -75,11 +75,7 @@ a {
 
     a {@apply text-blue-400 hover:underline}
     
-    h1, h2, h3,h4,h5,h6 {@apply font-bold mt-3}
-    h2 { @apply text-3xl; }
-    h3 { @apply text-2xl; }
-    h4 { @apply text-xl; }
-    h5 { @apply text-lg; }
+    h1, h2, h3,h4,h5,h6 {@apply font-bold mt-3} h2 { @apply text-3xl; } h3 { @apply text-2xl; } h4 { @apply text-xl; } h5 { @apply text-lg; }
 
     code, pre {
       overflow-x: scroll;
@@ -91,6 +87,7 @@ a {
       ul {list-style-type: circle;}
       ol {list-style-type: decimal;}
     p {
+      @apply text-lg;
       margin-bottom: 10px;
       word-wrap: break-word;
     }
