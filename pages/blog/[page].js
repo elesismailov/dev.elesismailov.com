@@ -19,11 +19,10 @@ export default function BlogPage({ posts, totalPages, currentPage }) {  // Recei
         </Head>
         <div className='
             py-10            
-            sm:py-16 sm:px-24
-            md:py-10 md:px-28
-            lg:px-36 min-h-screen mx-auto my-10'>
+            sm:py-16 sm:px-20
+            md:py-10 md:px-24
+            lg:px-32 min-h-screen mx-auto my-10'>
             <h1 className='text-4xl text-center mb-10'>My Blog</h1>
-
 
             <ul className='posts-list mb-14 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] justify-items-center gap-y-10 gap-x-5'>
                 {posts.map((post) => {
@@ -59,7 +58,7 @@ export default function BlogPage({ posts, totalPages, currentPage }) {  // Recei
 // pages/blog/[page].js
 
 export async function getStaticPaths() {
-    const pageSize = 6; 
+    const pageSize = 9; 
 
     const totalPosts = await prisma.post.count({
         where: { unlisted: false } 
@@ -79,7 +78,7 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps({ params }) {
-    const pageSize = 6; 
+    const pageSize = 9; 
 
     const currentPage = parseInt(params?.page) || 1; 
 

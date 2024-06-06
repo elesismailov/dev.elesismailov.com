@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+
 }
 
 datasource db {
@@ -28,4 +29,5 @@ model Post {
   authorId  Int
   publishedAt DateTime?
   createdAt DateTime @default(now()) @db.Timestamp()
+
 }
