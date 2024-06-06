@@ -3,28 +3,35 @@ import { useEffect, useState } from 'react';
 import ProtectedLayer from "@/components/ProtectedLayer";
 import AdminHeader from '@/components/AdminHeader';
 // import markdownIt from 'markdown-it';
+import { v4 as uuidv4 } from 'uuid';
 
 
 
 export default function AdminNewPost() {
 
-    const [title, setTitle] = useState(null);
-    const [content, setContent] = useState(null);
-    const [slug, setSlug] = useState(null);
-    const [previewLink, setPreviewLink] = useState(null);
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const [slug, setSlug] = useState('');
+    const [previewLink, setPreviewLink] = useState('');
     const [unlisted, setUnlisted] = useState(false);
+
+    useEffect(() => {
+        const generateSlug = (title) => {
+            const slugifiedTitle = title
+                .toLowerCase()
+                .trim()
+                .replace(/ /g, '-') // Replace spaces with hyphens
+                .replace(/[^\w-]+/g, ''); // Remove non-alphanumeric characters
+
+            return `${slugifiedTitle}-${uuidv4().slice(0, 13)}`; // Add a unique ID
+        };
+
+        setSlug(generateSlug(title));
+    }, [title]); // Run only when the title changes
 
     const handleSubmit = async event => {
         event.preventDefault();
-
-        const postData = {
-            title,
-            preview: previewLink,
-            slug,
-            content,
-            unlisted
-        };
-
+        const postData = { title, preview: previewLink, slug, content, unlisted };
         const response = await fetch('/api/admin/blog/posts', {
             method: 'POST',
             body: JSON.stringify(postData),
@@ -53,7 +60,7 @@ export default function AdminNewPost() {
                         </label>
                         <label className='mb-5 block'>
                             <p><b>Slug:</b></p>
-                            <input className="w-full p-2 border rounded" onChange={(e) => setSlug(e.target.value)} name="slug" />
+                            <input className="w-full p-2 border rounded" value={slug} onChange={(e) => setSlug(e.target.value)} name="slug" required />
                         </label>
                         <label className='flex items-center mb-5 gap-5'>
                             <p><b>Unlisted:</b></p>
@@ -69,74 +76,74 @@ export default function AdminNewPost() {
                         </button>
                     </form>
 
-                    <ImageUploadForm />
+                    {/* <ImageUploadForm /> */}
                 </div>
             </div>
         </div>
     </ProtectedLayer>)
 }
 
-const ImageUploadForm = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [isUploading, setIsUploading] = useState(false);
-    const [uploadProgress, setUploadProgress] = useState(0);
-    const [uploadError, setUploadError] = useState(null);
-    const [imageUrl, setImageUrl] = useState(null);
+// const ImageUploadForm = () => {
+//     const [selectedImage, setSelectedImage] = useState(null);
+//     const [isUploading, setIsUploading] = useState(false);
+//     const [uploadProgress, setUploadProgress] = useState(0);
+//     const [uploadError, setUploadError] = useState(null);
+//     const [imageUrl, setImageUrl] = useState(null);
 
-    const handleImageChange = (event) => {
-        setSelectedImage(event.target.files[0]);
-    };
+//     const handleImageChange = (event) => {
+//         setSelectedImage(event.target.files[0]);
+//     };
 
-    const handleUpload = async () => {
-        if (!selectedImage) return;
+//     const handleUpload = async () => {
+//         if (!selectedImage) return;
 
-        const fileExtension = selectedImage.name.split('.').pop(); // Get file extension
+//         const fileExtension = selectedImage.name.split('.').pop(); // Get file extension
 
-        setIsUploading(true);
-        setUploadError(null);
+//         setIsUploading(true);
+//         setUploadError(null);
 
-        try {
-            const response = await fetch('/api/handle/blog-files', {
-                method: 'POST',
-                body: selectedImage, // Send the file directly as the body
-                headers: {
-                    'Content-Type': `image/${fileExtension}`, // Explicitly set the correct Content-Type
-                  },
-            });
+//         try {
+//             const response = await fetch('/api/handle/blog-files', {
+//                 method: 'POST',
+//                 body: selectedImage, // Send the file directly as the body
+//                 headers: {
+//                     'Content-Type': `image/${fileExtension}`, // Explicitly set the correct Content-Type
+//                 },
+//             });
 
-            if (response.ok) {
-                const data = await response.json();
-                setImageUrl(data.imageUrl);
-            } else {
-                throw new Error('Image upload failed');
-            }
-        } catch (error) {
-            console.error('Error uploading image:', error);
-            setUploadError(error.message || 'Upload failed');
-        } finally {
-            setIsUploading(false);
-        }
-    };
+//             if (response.ok) {
+//                 const data = await response.json();
+//                 setImageUrl(data.imageUrl);
+//             } else {
+//                 throw new Error('Image upload failed');
+//             }
+//         } catch (error) {
+//             console.error('Error uploading image:', error);
+//             setUploadError(error.message || 'Upload failed');
+//         } finally {
+//             setIsUploading(false);
+//         }
+//     };
 
-    return (
-        <div>
-            <input type="file" accept="image/*" onChange={handleImageChange} />
-            {selectedImage && (
-                <div>
-                    <p>Selected Image: {selectedImage.name}</p>
-                    {isUploading && (
-                        <div>
-                            <progress value={uploadProgress} max="100" />
-                            <p>Uploading: {uploadProgress}%</p>
-                        </div>
-                    )}
-                    {!isUploading && (
-                        <button onClick={handleUpload}>Upload Image</button>
-                    )}
-                    {uploadError && <p style={{ color: 'red' }}>{uploadError}</p>}
-                    {imageUrl && <img src={imageUrl} alt="Uploaded image" style={{ maxWidth: '200px' }} />}
-                </div>
-            )}
-        </div>
-    );
-};
+//     return (
+//         <div>
+//             <input type="file" accept="image/*" onChange={handleImageChange} />
+//             {selectedImage && (
+//                 <div>
+//                     <p>Selected Image: {selectedImage.name}</p>
+//                     {isUploading && (
+//                         <div>
+//                             <progress value={uploadProgress} max="100" />
+//                             <p>Uploading: {uploadProgress}%</p>
+//                         </div>
+//                     )}
+//                     {!isUploading && (
+//                         <button onClick={handleUpload}>Upload Image</button>
+//                     )}
+//                     {uploadError && <p style={{ color: 'red' }}>{uploadError}</p>}
+//                     {imageUrl && <img src={imageUrl} alt="Uploaded image" style={{ maxWidth: '200px' }} />}
+//                 </div>
+//             )}
+//         </div>
+//     );
+// };

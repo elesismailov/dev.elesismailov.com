@@ -4,7 +4,7 @@ import ProtectedLayer from "@/components/ProtectedLayer";
 // import markdownIt from 'markdown-it';
 import prisma from "@/lib/prisma";
 import AdminHeader from '@/components/AdminHeader';
-
+import { v4 as uuidv4 } from 'uuid';
 
 export default function AdminEditPost({ post }) {
 
@@ -13,6 +13,20 @@ export default function AdminEditPost({ post }) {
     const [slug, setSlug] = useState(post.slug);
     const [previewLink, setPreviewLink] = useState(post.preview);
     const [unlisted, setUnlisted] = useState(post.unlisted);
+
+    useEffect(() => {
+        const generateSlug = (title) => {
+            const slugifiedTitle = title
+                .toLowerCase()
+                .trim()
+                .replace(/ /g, '-') // Replace spaces with hyphens
+                .replace(/[^\w-]+/g, ''); // Remove non-alphanumeric characters
+
+            return `${slugifiedTitle}-${uuidv4().slice(0, 13)}`; // Add a unique ID
+        };
+
+        setSlug(generateSlug(title));
+    }, [title]); // Run only when the title changes
 
     async function handleSubmit(event) {
         event.preventDefault()
@@ -45,7 +59,7 @@ export default function AdminEditPost({ post }) {
                         </label>
                         <label className='mb-5 block'>
                             <p><b>Slug:</b></p>
-                            <input className="w-full p-2 border rounded" value={slug} onChange={(e) => setSlug(e.target.value)} name="slug" type='text' />
+                            <input className="w-full p-2 border rounded" value={slug} onChange={(e) => setSlug(e.target.value)} name="slug" required />
                         </label>
                         <label className='flex items-center mb-5 gap-5'>
                             <p><b>Unlisted:</b></p>
