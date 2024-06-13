@@ -1,9 +1,13 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ProtectedLayer from "@/components/ProtectedLayer";
 import AdminHeader from '@/components/AdminHeader';
 // import markdownIt from 'markdown-it';
 import { v4 as uuidv4 } from 'uuid';
+import { storage, db } from '@/lib/firebase'; // Adjust the path
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+// import { addDoc, collection } from 'firebase/firestore';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 
 
@@ -46,9 +50,12 @@ export default function AdminNewPost() {
     return (<ProtectedLayer>
         <AdminHeader />
         <div className="blog-new-post">
+
             <div className="min-h-screen flex items-center justify-center bg-gray-100">
                 <div className="bg-white p-8 rounded shadow-md w-full max-w-5xl">
                     <h1 className="text-2xl font-semibold mb-4">New Blog Post</h1>
+                    <ImageUploadForm />
+
                     <form onSubmit={handleSubmit}>
                         <label className='mb-5 block'>
                             <p><b>Title:</b></p>
@@ -76,74 +83,114 @@ export default function AdminNewPost() {
                         </button>
                     </form>
 
-                    {/* <ImageUploadForm /> */}
                 </div>
             </div>
         </div>
     </ProtectedLayer>)
 }
+const ImageUploadForm = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [isUploading, setIsUploading] = useState(false);
+    const [uploadProgress, setUploadProgress] = useState(0);
+    const [uploadError, setUploadError] = useState(null);
+    const [images, setImages] = useState([]);
 
-// const ImageUploadForm = () => {
-//     const [selectedImage, setSelectedImage] = useState(null);
-//     const [isUploading, setIsUploading] = useState(false);
-//     const [uploadProgress, setUploadProgress] = useState(0);
-//     const [uploadError, setUploadError] = useState(null);
-//     const [imageUrl, setImageUrl] = useState(null);
+    const fileInputRef = useRef(null); // To clear file input later
 
-//     const handleImageChange = (event) => {
-//         setSelectedImage(event.target.files[0]);
-//     };
+    const handleImageChange = (event) => {
+        setSelectedImage(event.target.files[0]);
+    };
 
-//     const handleUpload = async () => {
-//         if (!selectedImage) return;
+    const handleUpload = async () => {
+        if (!selectedImage) return;
 
-//         const fileExtension = selectedImage.name.split('.').pop(); // Get file extension
+        setIsUploading(true);
+        setUploadError(null);
 
-//         setIsUploading(true);
-//         setUploadError(null);
+        try {
 
-//         try {
-//             const response = await fetch('/api/handle/blog-files', {
-//                 method: 'POST',
-//                 body: selectedImage, // Send the file directly as the body
-//                 headers: {
-//                     'Content-Type': `image/${fileExtension}`, // Explicitly set the correct Content-Type
-//                 },
-//             });
+            const uuid = uuidv4();
+            const originalFilename = selectedImage.name.split('.').slice(0, -1).join('.');
+            const uniqueFilename = `${originalFilename}-${uuid}.${selectedImage.name.split('.').pop()}`; // Get the original extension
 
-//             if (response.ok) {
-//                 const data = await response.json();
-//                 setImageUrl(data.imageUrl);
-//             } else {
-//                 throw new Error('Image upload failed');
-//             }
-//         } catch (error) {
-//             console.error('Error uploading image:', error);
-//             setUploadError(error.message || 'Upload failed');
-//         } finally {
-//             setIsUploading(false);
-//         }
-//     };
+            // 1. Create a storage reference (where to store in Firebase Storage)
+            const storageRef = ref(storage, `images/${uniqueFilename}`);
 
-//     return (
-//         <div>
-//             <input type="file" accept="image/*" onChange={handleImageChange} />
-//             {selectedImage && (
-//                 <div>
-//                     <p>Selected Image: {selectedImage.name}</p>
-//                     {isUploading && (
-//                         <div>
-//                             <progress value={uploadProgress} max="100" />
-//                             <p>Uploading: {uploadProgress}%</p>
-//                         </div>
-//                     )}
-//                     {!isUploading && (
-//                         <button onClick={handleUpload}>Upload Image</button>
-//                     )}
-//                     {uploadError && <p style={{ color: 'red' }}>{uploadError}</p>}
-//                     {imageUrl && <img src={imageUrl} alt="Uploaded image" style={{ maxWidth: '200px' }} />}
-//                 </div>
-//             )}
-//         </div>
-//     );
-// };
+            // 2. Upload the file
+            const uploadTask = uploadBytesResumable(storageRef, selectedImage);
+
+            // 3. Listen for state changes, errors, and completion
+            uploadTask.on(
+                'state_changed',
+                (snapshot) => {
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    setUploadProgress(progress);
+                },
+                (error) => {
+                    setUploadError(error.message);
+                    setIsUploading(false); // Reset isUploading on error
+                    setUploadProgress(0); // Reset progress bar on error
+                },
+                async () => {
+                    // 4. Get the download URL when upload is complete
+                    const url = await getDownloadURL(uploadTask.snapshot.ref);
+
+                    setImages(prevImages => [...prevImages, { name: uniqueFilename, url }]);
+                    setIsUploading(false);
+                    setUploadProgress(0);
+                    fileInputRef.current.value = null;
+                }
+            );
+
+        } catch (error) {
+            console.error('Error uploading image:', error);
+            setUploadError(error.message || 'Upload failed');
+            setIsUploading(false);
+        }
+    };
+
+    return (
+        <div className='mb-7'>
+            <h2 className='text-lg font-semibold'>Upload Images:</h2>
+            <input type="file" className="bg-red-500 mb-4 border-2 border-red-500 rounded-md" accept="image/*" onChange={handleImageChange} ref={fileInputRef} />
+
+            {selectedImage && (
+                <div>
+                    {/* <p className='mb-3'>Selected Image: {selectedImage.name}</p> */}
+                    {isUploading && (
+                        <div className='mb-3'>
+                            <progress value={uploadProgress} max="100" />
+                            <p>Uploading: {uploadProgress}%</p>
+                        </div>
+                    )}
+                    {!isUploading && (
+                        <button className='bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-44 mb-5' onClick={handleUpload}>Upload Image</button>
+                    )}
+                    {uploadError && <p style={{ color: 'red' }}>{uploadError}</p>}
+                </div>
+            )}
+
+            {/* Render image grid */}
+            <div className="flex flew-wrap gap-4">
+                {images.map((image) => (
+                    <CopyToClipboard className="max-w-24 border-2 border-red-500 rounded-md" key={image.id || image.name} text={image.url}>
+                        <button className="relative group" onClick={() => { }}>
+                            <img
+                                src={image.url}
+                                alt={image.name}
+                                className="w-full h-auto rounded-md group-hover:opacity-75"
+                            />
+                            <div className="absolute bottom-2 left-2 bg-black/50 text-white px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                {image.name}
+                            </div>
+                        </button>
+                    </CopyToClipboard>
+                ))}
+            </div>
+
+
+        </div>
+    );
+
+};
+
