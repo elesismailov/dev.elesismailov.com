@@ -8,7 +8,7 @@ export default function BlogPostCard ({ post }) {
                 <div className="mb-5 block w-full max-h-52 h-52 bg-black overflow-hidden">
                     <div className="w-full h-full block">
                         {!!post.preview ?
-                            <img className="max-w-full h-full" src={post.preview} alt={post.title + " preview"} />
+                            <img className="max-w-full h-full object-cover w-full max-h-full" src={post.preview} alt={post.title + " preview"} />
                             :
                             <div className=""></div>
                             // <img className="max-w-full h-full" src="/redacted.png" alt="A black background with a word redactepost." />

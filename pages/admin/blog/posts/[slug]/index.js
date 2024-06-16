@@ -59,6 +59,7 @@ export default function AdminPostInfo({ post }) {
                     : <p className='text-green-400'>Public</p>
                 }
                 <p className="mb-4 text-gray-600">{new Date(post.createdAt).toLocaleString('en-US', { year: "numeric", month: "long", day: "numeric" })}</p>
+                { post.preview && <div className="mb-4 max-w-96 border-2 rounded-md border-black"><img src={post.preview} alt="" /></div>}
                 <div className="post-wrapper list-inside" dangerouslySetInnerHTML={{ __html: (htmlContent) }} ></div>
             </div>
         </div>
