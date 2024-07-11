@@ -5,6 +5,19 @@
 
             "projects": [
                 {
+                    "title": "B40.KG",
+                    "description": [
+                        "Multinational German-Kyrgyzstan Arbitrage Company.",
+                        "It was made to be scalable in the future. Instead of making it a static page, I made it a full-stack app.",
+                        "The back end is Next.js which tracks language locales(/ru, /en) and dynamically renders them."
+                    ],
+                    "preview": "/previews/preview-b40.png",
+                    "previewAltText": "B40 Web Page Screenshot",
+                    "link": "http://b40.kg/",
+                    "tags": ["Next.js", "SASS", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Responsive"]
+            
+                },
+                {
                     "title": "Ink. Agency",
                     "description": [
                         "Email copywriting agency.",
@@ -31,19 +44,6 @@
                     "tags": ["Next.js", "TailwindCSS", "Domain Set Up", "Responsive"] 
                 },
                 {
-                    "title": "B40.KG",
-                    "description": [
-                        "Multinational German-Kyrgyzstan Arbitrage Company.",
-                        "It was made to be scalable in the future. Instead of making it a static page, I made it a full-stack app.",
-                        "The back end is Next.js which tracks language locales(/ru, /en) and dynamically renders them."
-                    ],
-                    "preview": "/preview-1.png",
-                    "previewAltText": "B40 Web Page Screenshot",
-                    "link": "http://b40.kg/",
-                    "tags": ["Next.js", "SASS", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Responsive"]
-            
-                },
-                {
                     "title": "Scriptonite Fan Made Page",
                     "description": [
                         "This project was done for my friend who designed the whole page.",
@@ -56,18 +56,7 @@
                     "tags": ["Next.js", "Animations", "Responsive", "SASS"]
             
                 },
-                {
-                    "title": "elesismailov.com",
-                    "description": [
-                        "This website integrates blog and email list applications.",
-                        "It is my main website."
-                    ],
-                    "preview": "/elesismailov.com-preview.png",
-                    "previewAltText": "Scriptonite Web Page Screenshot",
-                    "link": "http://elesismailov.com",
-                    "tags": ["Next.js", "Responsive", "SASS", "MongoDB"]
-            
-                },
+
                 {
                     "title": "Where in the world?",
                     "description": [
@@ -78,18 +67,8 @@
                     "previewAltText": "REST Countries API",
                     "link": "https://eleswastaken-front-end-countries-api-gui.netlify.app/",
                     "tags": ["React.js", "TailwindCSS", "Single Page App", "Dark Mode", "REST API", "Responsive"]
-                },
-                
-                {
-                    "title": "Room Landing Page",
-                    "preview": "/room-lp-preview.png",
-                    "previewAltText": "Room - Furniture Company Landing Page",
-                    "link": "https://front-end-m1hd.vercel.app/",
-                    "description": [
-                        "Very elegant landing page."
-                    ],
-                    "tags": ["Responsive", "TailwindCSS"]
                 }
+            
             ],
 
             "header_links": [

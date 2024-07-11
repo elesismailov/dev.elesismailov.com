@@ -127,6 +127,19 @@ export async function getStaticProps() {
 
 const recent_projects = [
     {
+        "title": "B40.KG",
+        "description": [
+            "Multinational German-Kyrgyzstan Arbitrage Company.",
+            "It was made to be scalable in the future. Instead of making it a static page, I made it a full-stack app.",
+            "The back end is Next.js which tracks language locales(/ru, /en) and dynamically renders them."
+        ],
+        "preview": "/previews/preview-b40.png",
+        "previewAltText": "B40 Web Page Screenshot",
+        "link": "http://b40.kg/",
+        "tags": ["Next.js", "TailwindCSS", "Multilanguage", "Domain Set Up", "Custom Emails", "Integrated Maps", "Contact Form"]
+
+    },
+    {
         "title": "Ink. Agency",
         "description": [
             "Email copywriting agency.",
@@ -140,16 +153,4 @@ const recent_projects = [
         "tags": ["Next.js", "TailwindCSS", "Domain Set Up", "Contact Form", "Responsive"]
 
     },
-    {
-        "title": "Luxe Salon Agency",
-        "description": [
-            "Sales & Marketing Agency targeting beauty salons.",
-            "Work inlcluded: desiging assets and the website, coding & deploying the website.",
-            "One of my favorite parts is the color palette of the page."
-        ],
-        "preview": "/previews/luxe-salon-preview.png",
-        "previewAltText": "Scriptonite Web Page Screenshot",
-        "link": "https://luxe-salon-website-56475796.vercel.app/",
-        "tags": ["Next.js", "TailwindCSS", "Domain Set Up", "Responsive"]
-    }
 ];
